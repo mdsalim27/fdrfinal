@@ -1,12 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Container'
+import Logo from '../assets/logo.png'
+import { IoIosSearch } from 'react-icons/io'
+import { FaBars } from 'react-icons/fa'
+
 
 const Navbar = () => {
+  let [nave, setNave] = useState([])
+  let handelNave = () => {
+    console.log('ami');
+
+
+
+  }
   return (
     <div>
-      <Container>
-      <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quas repellat sed laboriosam voluptas pariatur, sint eum excepturi voluptatum maiores voluptates debitis blanditiis dicta, animi qui explicabo! Dicta recusandae obcaecati nesciunt magnam consequatur officia numquam aspernatur aut. Impedit voluptas omnis quae voluptatibus dolorem dolorum quidem veritatis, architecto illum aut maxime molestias quo perferendis, minima consequuntur facilis ipsum incidunt amet quos quasi. Quaerat dolorem totam facere placeat nemo expedita ipsa, sed suscipit, earum quod eum? Quos illum labore mollitia itaque hic facilis adipisci voluptatum maxime? Labore, quia maxime libero facere eos officiis, saepe laboriosam impedit blanditiis eius porro dolore veritatis similique? Rerum, ut!</h1>
-      </Container>
+      <section className='mt-6'>
+        <Container>
+          <div className='lg:flex'>
+            <div className='lg:w-1/6  flex justify-between px-5 lg:px-0 lg:items-center items-center'><img src={Logo} alt="" /> < FaBars onClick={handelNave} className='cursor-pointer lg:opacity-0 ' /> </div>
+
+            <div className='lg:w-3/6'>
+              <ui className="lg:flex list-none" >
+                <li className='px-3'><a href="##">home </a></li>
+                <li className='px-3'><a href="##">Pages</a></li>
+                <li className='px-3'><a href="##">Products</a></li>
+                <li className='px-3'><a href="##">Blog </a></li>
+                <li className='px-3'><a href="##">Shop</a></li>
+                <li className='px-3'><a href="##">Contact</a></li>
+              </ui>
+            </div>
+            <div className='lg:w-2/6 flex items-center justify-end '>
+              <div className='bg-[#D9D9D9] h-[100%]'>
+                <input type="text" />
+              </div>
+              <div className='bg-amber-800 h-[100%] px-2 '> <IoIosSearch className='mt-[50%] transition-x-[-50%]' /></div>
+            </div>
+
+          </div>
+        </Container>
+      </section>
     </div>
   )
 }
