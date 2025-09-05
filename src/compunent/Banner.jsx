@@ -3,8 +3,8 @@ import Bannerr from '../assets/banner.png'
 
 const Banner = () => {
     return (
-        <section>
-            <div><img src={Bannerr} alt="" /></div>
+        <section className='bg-[#F1F0FF]'>
+            <div><img className='mx-auto' src={Bannerr} alt="" /></div>
         </section>
     )
 }
