@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Menu from './Menu'
 import Banner from './Banner'
 import Product from './Product'
+import LeatestProducts from './LeatestProducts'
 
 
 
@@ -14,6 +15,7 @@ const RootLayout = () => {
             <Navbar />
             <Banner/>
             <Product/>
+            <LeatestProducts/>
             <Outlet />
         </div>
     )
