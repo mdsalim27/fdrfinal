@@ -6,6 +6,8 @@ import { FaBars } from 'react-icons/fa'
 
 
 const Navbar = () => {
+
+
   let [nave, setNave] = useState([])
   let handelNave = () => {
     console.log('ami');
@@ -31,14 +33,21 @@ const Navbar = () => {
               </ui>
             </div>
             <div className='lg:w-2/6 flex items-center justify-end '>
+
+
               <div className='bg-[#D9D9D9] h-[100%]'>
-                <input type="text" />
+                <input
+                 type="text"
+                 />
               </div>
+
+
               <div className='bg-amber-800 h-[100%] px-2 '> <IoIosSearch className='mt-[50%] transition-x-[-50%]' /></div>
             </div>
 
           </div>
         </Container>
+       
       </section>
     </div>
   )

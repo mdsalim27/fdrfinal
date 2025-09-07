@@ -7,6 +7,7 @@ import Product from './Product'
 import LeatestProducts from './LeatestProducts'
 import Support from './Support'
 import BanAdd from './BanAdd'
+import Test from './Test'
 
 
 
@@ -15,6 +16,7 @@ const RootLayout = () => {
         <div>
             <Menu/>
             <Navbar />
+            <Test/>
             <Banner/>
             <Product/>
             <LeatestProducts/>
