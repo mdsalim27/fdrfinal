@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { ContextApi } from './compunent/ContextApi.jsx'
 
+import "slick-carousel/slick/slick.css";
 
 createRoot(document.getElementById('root')).render(
   <ContextApi>
