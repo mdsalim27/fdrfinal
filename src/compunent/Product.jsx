@@ -1,18 +1,19 @@
 
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Container from './Container'
 // import Producta from '../assets/producta.png'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaRegHeart, FaSearchPlus } from 'react-icons/fa'
 import { FaCartShopping } from 'react-icons/fa6'
 import { ApiData } from './ContextApi'
 import Slider from 'react-slick'
+import { Link } from 'react-router-dom'
 
 
 function SampleNextArrow(props) {
     const { style, onClick } = props;
     return (
         <div className='lg:w-[50px] w-[30px] lg:h-[50px] h-[30px] border-none rounded-full flex justify-center 
-        items-center bg-amber-800 absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
+        items-center bg-[blue] absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
         >
             <FaArrowAltCircleRight className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer' />
         </div>
@@ -22,7 +23,7 @@ function SamplePrevArrow(props) {
     const { style, onClick } = props;
     return (
         <div className='lg:w-[50px] w-[50px] lg:h-[50px] h-[50px]  border-none rounded-full flex  justify-center
-         items-center bg-amber-800 absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
+         items-center bg-[blue] absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
             <FaArrowAltCircleLeft className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer ' />
         </div>
     );
@@ -32,6 +33,9 @@ function SamplePrevArrow(props) {
 
 const Product = () => {
     let Data = useContext(ApiData)
+    let [allproduct, setAllproduct] = useState([])
+
+
     var settings = {
         dots: true,
         infinite: true,
@@ -41,22 +45,25 @@ const Product = () => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
     }
+    let handeleallProduct = () => {
+        console.log("ami");
+    }
     return (
         <section className=''>
-
-
             <Container >
                 <div className='mt-[25px]'><h2 className='text-center font-bold text-[30px] opacity-100'>Featured Products</h2></div>
-                <div className=''>
+                <div className='' onClick={handeleallProduct}>
                     <Slider {...settings}>
                         {
                             Data.map((item) => (
 
                                 <div className=' relative  '>
-                                    <div className='shadow-2xl mx-3'>
+                                    <div className='shadow-2xl mx-1'>
                                         <div className='relative'>
                                             <div className=' bg-[#F6F7FB] '>
-                                                <img className='mx-auto  ' src={item.image_path} alt="" />
+                                                <Link to={"/Products"}>
+                                                    <img className='mx-auto  ' src={item.image_path} alt="" />
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className='text-center'>
@@ -71,7 +78,7 @@ const Product = () => {
                                         </div>
                                         {/* hovar mart /////////////////////////////////////////////////////////////////////////////// */}
                                         <div className='w-[100%]  shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
-                                            <div className='relative mx-3'>
+                                            <div className='relative mx-1'>
                                                 <div className=' bg-[#F7F7F7]'>
                                                     <img className='mx-auto  ' src={item.image_path} alt="" />
                                                     <div className='flex '>

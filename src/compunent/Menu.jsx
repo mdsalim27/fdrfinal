@@ -24,18 +24,18 @@ const Menu = () => {
 
                     <div className='flex text-[#F1F1F1]'>
                         <div>
-                            <select>
-                                <option value="English">English</option>
-                                <option value="Bangla" selected>Bangla</option>
-                                <option value="Japansece">Japansece</option>
+                            <select >
+                                <option className='bg-[#7474ac]' value="English">English</option>
+                                <option className='bg-[#7474ac]' value="Bangla" selected>Bangla</option>
+                                <option className='bg-[#7474ac]' value="Japansece">Japansece</option>
                             </select>
                         </div>
                         <div>
                             <select className='px-2 mx-5'>
-                                <option value="USD">USD</option>
-                                <option value="Bangla" selected>BDT</option>
-                                <option value="Japansece">YEN</option>
-                                <option value="Tether">USDT</option>
+                                <option className='bg-[#7474ac]' value="USD">USD</option>
+                                <option className='bg-[#7474ac]' value="Bangla" selected>BDT</option>
+                                <option className='bg-[#7474ac]' value="Japansece">YEN</option>
+                                <option className='bg-[#7474ac]' value="Tether">USDT</option>
                             </select>
                         </div>
                         <div className='flex items-center gap-3 text-[#F1F1F1] '>

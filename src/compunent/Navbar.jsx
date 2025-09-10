@@ -24,11 +24,11 @@ const Navbar = () => {
 
             <div className='lg:w-3/6'>
               <ui className="lg:flex list-none" >
-                <li className='px-3'><a href="##">home </a></li>
+                <li className='px-3'><a href="/">home </a></li>
                 <li className='px-3'><a href="##">Pages</a></li>
-                <li className='px-3'><a href="##">Products</a></li>
+                <li className='px-3'><a href="/Products">Products</a></li>
                 <li className='px-3'><a href="##">Blog </a></li>
-                <li className='px-3'><a href="##">Shop</a></li>
+                <li className='px-3'><a href="/shop">Shop</a></li>
                 <li className='px-3'><a href="##">Contact</a></li>
               </ui>
             </div>

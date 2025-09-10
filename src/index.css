@@ -14,11 +14,15 @@
     transform: translateY(-50%);
     left: 10%;
 }
-
- button{
+#banner .slick-dots button{
     background-color: brown;
     width: 30px;
     height: 30px;
     padding: 10px;
     display: block;
+}
+/* product slider */
+.slick-dots{
+display:none;
+visibility: hidden;
 }
