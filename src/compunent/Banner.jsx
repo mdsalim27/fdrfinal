@@ -5,7 +5,7 @@ import Slider from 'react-slick'
 
 
 const Banner = () => {
-     var bannarslide = {
+    var bannarslide = {
         dots: true,
         infinite: true,
         slidesToShow: 1,
@@ -13,14 +13,14 @@ const Banner = () => {
         autoplay: true,
         speed: 2000,
         autoplaySpeed: 2000,
-     }
+    }
     return (
         <section id='banner' className='bg-[#F1F0FF]'>
-<Slider {...bannarslide}>
-            <div><img className='mx-auto' src={Bannerr} alt="" /></div>
-            <div><img className='mx-auto' src={Bannerr} alt="" /></div>
-            <div><img className='mx-auto' src={Bannerr} alt="" /></div>
-</Slider>
+            <Slider {...bannarslide}>
+                <div><img className='mx-auto' src={Bannerr} alt="" /></div>
+                <div><img className='mx-auto' src={Bannerr} alt="" /></div>
+                <div><img className='mx-auto' src={Bannerr} alt="" /></div>
+            </Slider>
         </section>
     )
 }

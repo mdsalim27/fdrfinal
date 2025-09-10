@@ -5,7 +5,7 @@ const BanAdd = () => {
   return (
     <section className='bg-[#F1F0FF] my-14 '>
         <div className=''>
-            <img className='mx-auto ' src={BaneAdd} alt="" />
+            <img className='mx-auto cursor-pointer ' src={BaneAdd} alt="" />
         </div>
     </section>
    
