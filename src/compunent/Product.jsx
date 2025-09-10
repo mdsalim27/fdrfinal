@@ -103,7 +103,8 @@ const Product = () => {
                                     </div>
                                 </div>
                             ))
-                        }</Slider>
+                        }
+                        </Slider>
 
                 </div>
 

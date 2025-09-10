@@ -13,7 +13,7 @@ const DiscountItem = () => {
                             <li className='hover:text-[red] hover:list-disc hover:underline'><a href="#">Sofa Colletion</a></li>
                         </ul>
                     </div>
-                    <div className='flex justify-center'>
+                    <div className='flex justify-center cursor-pointer'>
                         <img src={discountt} alt="" />
                     </div>
                 </div>
