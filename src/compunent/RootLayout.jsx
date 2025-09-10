@@ -11,6 +11,7 @@ import TrendingProducts from './TrendingProducts'
 import DiscountItem from './DiscountItem'
 import TopCategories from './TopCategories'
 import GetLeates from './GetLeates'
+import Footer from './Footer'
 // import Home from '../page/Home'
 
 
@@ -32,6 +33,7 @@ const RootLayout = () => {
             <TopCategories/>
             <GetLeates/> */}
             <Outlet /> 
+            <Footer/>
         </div>
     )
 }

@@ -5,7 +5,7 @@ import { FaPenNib, FaRegCalendarAlt } from 'react-icons/fa'
 const LeatestBlogg = () => {
     return (
         <Container>
-            <div className='py-9 '>
+            <div className='py-9 cursor-pointer'>
                 <div><h2 className='font-extrabold text-[#151875] text-[30px] text-center'>Leatest Blog</h2></div>
                 <div className='flex'>
                     <div className='w-[33%] my-10 shadow-2xl'>
