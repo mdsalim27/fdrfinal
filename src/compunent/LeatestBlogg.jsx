@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Container'
 import Freem from '../assets/Freem.png'
 import { FaPenNib, FaRegCalendarAlt } from 'react-icons/fa'
 const LeatestBlogg = () => {
+    let [show , setShow] = useState(false) 
+    let [show1 , setShow1] = useState(false) 
+    let [show2 , setShow2] = useState(false) 
+    let handeLreadmore =()=>{
+       setShow(!show);   
+    }
+    let handeLreadmore1 =()=>{
+       setShow1(!show1);   
+    }
+    let handeLreadmore2 =()=>{
+       setShow2(!show2);   
+    }
+
     return (
         <Container>
             <div className='py-9 cursor-pointer'>
@@ -23,7 +36,10 @@ const LeatestBlogg = () => {
                         <div className='px-3'><h2 className='font-extrabold text-[#151875] text-[25px] py-4'>Top esssential Trends in 2021</h2>
                             <p className='pr-3'>More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
-                            <p className='py-5 font-extralight text-[#151875] text-[30px] underline'>Read More</p>
+                            <p onClick={handeLreadmore} className='py-5 font-extralight text-[#151875] text-[30px] underline'>Read More</p>
+                            {
+                                show && <div><h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima recusandae, officia maxime distinctio delectus asperiores pariatur esse quos hic quaerat?</h2></div>
+                            }
                         </div>
                     </div>
                     <div className='w-[33%] my-10 shadow-2xl'>
@@ -41,7 +57,10 @@ const LeatestBlogg = () => {
                         <div className='px-3'><h2 className='font-extrabold text-[#151875] text-[25px] py-4'>Top esssential Trends in 2021</h2>
                             <p className='pr-3'>More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
-                            <p className='py-5 font-extralight text-[#151875] text-[30px] underline'>Read More</p>
+                            <p onClick={handeLreadmore1} className='py-5 font-extralight text-[#151875] text-[30px] underline'>Read More</p>
+                            {
+                                show1 && <div><h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima recusandae, officia maxime distinctio delectus asperiores pariatur esse quos hic quaerat?</h2></div>
+                            }
                         </div>
                     </div>
                     <div className='w-[33%] my-10 shadow-2xl'>
@@ -59,7 +78,10 @@ const LeatestBlogg = () => {
                         <div className='px-3'><h2 className='font-extrabold text-[#151875] text-[25px] py-4'>Top esssential Trends in 2021</h2>
                             <p className='pr-3'>More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
-                            <p className='py-5 font-extralight text-[#151875] text-[30px] underline'>Read More</p>
+                            <p onClick={handeLreadmore2} className='py-5 font-extralight text-[#151875] text-[30px] underline'>Read More</p>
+                            {
+                                show2 && <div><h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima recusandae, officia maxime distinctio delectus asperiores pariatur esse quos hic quaerat?</h2></div>
+                            }
                         </div>
                     </div>
                 </div>

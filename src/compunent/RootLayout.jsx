@@ -23,8 +23,8 @@ const RootLayout = () => {
             {/* <Home/> */}
              <Menu/> 
             <Navbar />
+            {/* <Product/> */}
              {/* <Banner/>
-            <Product/>
             <LeatestProducts/>
             <Support/>
             <BanAdd/>
