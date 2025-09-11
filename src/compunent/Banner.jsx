@@ -2,8 +2,6 @@ import React from 'react'
 import Bannerr from '../assets/banner.png'
 import Slider from 'react-slick'
 
-
-
 const Banner = () => {
     var bannarslide = {
         dots: true,
@@ -17,9 +15,11 @@ const Banner = () => {
     return (
         <section id='banner' className='bg-[#F1F0FF]'>
             <Slider {...bannarslide}>
-                <div><img className='mx-auto' src={Bannerr} alt="" /></div>
-                <div><img className='mx-auto' src={Bannerr} alt="" /></div>
-                <div><img className='mx-auto' src={Bannerr} alt="" /></div>
+                <div>
+                    <div><img className='w-full' src={Bannerr} alt="" /></div>
+                    <div><img className='w-full' src={Bannerr} alt="" /></div>
+                    <div><img className='w-full' src={Bannerr} alt="" /></div>
+                </div>
             </Slider>
         </section>
     )

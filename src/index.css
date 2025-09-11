@@ -4,25 +4,3 @@
 
 @import "slick-carousel/slick/slick-theme.css";
 
-#banner {
-    position: relative;
-}
-
-#banner .slick-dots {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10%;
-}
-#banner .slick-dots button{
-    background-color: brown;
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-    display: block;
-}
-/* product slider */
-.slick-dots{
-display:none;
-visibility: hidden;
-}
