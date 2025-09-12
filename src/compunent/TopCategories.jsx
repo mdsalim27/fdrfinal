@@ -9,7 +9,7 @@ function SampleNextArrow(props) {
   const { style, onClick } = props;
   return (
     <div className='lg:w-[50px] w-[30px] lg:h-[50px] h-[30px] border-none rounded-full flex justify-center 
-        items-center bg-[#a7a7db] absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
+        items-center bg-[#84d765] absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
     >
       <FaArrowAltCircleRight className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer' />
     </div>
@@ -19,7 +19,7 @@ function SamplePrevArrow(props) {
   const { style, onClick } = props;
   return (
     <div className='lg:w-[50px] w-[50px] lg:h-[50px] h-[50px]  border-none rounded-full flex  justify-center
-         items-center bg-[#a7a7db] absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
+         items-center bg-[#84d765] absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
       <FaArrowAltCircleLeft className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer ' />
     </div>
   );
@@ -29,7 +29,7 @@ function SamplePrevArrow(props) {
 const TopCategories = () => {
   let data = useContext(ApiData)
   var settingss = {
-    dots: true,
+    dots:false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
