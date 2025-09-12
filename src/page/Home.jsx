@@ -12,12 +12,14 @@ import TopCategories from '../compunent/TopCategories'
 import GetLeates from '../compunent/GetLeates'
 import Companyspons from '../compunent/Companyspons'
 import LeatestBlogg from '../compunent/LeatestBlogg'
+import Pagination from '../compunent/Pagination'
 
 const Home = () => {
   return (
     <div>
         {/* <Menu/> */}
         {/* <Navbar/> */}
+        <Pagination/>
         <Banner/>
         <Product/>
         <LeatestProducts/>
