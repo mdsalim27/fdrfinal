@@ -8,14 +8,29 @@ import { ApiData } from './ContextApi'
 
 const Shop = () => {
   // api data 
-    let info = useContext(ApiData)
-// perpage currentpage pagenumber
+  let info = useContext(ApiData)
+  // perpage currentpage pagenumber
   let [perpage, setParpage] = useState(12)
   let [currentpage, setCurrentpage] = useState(1)
-  let lastpage =perpage * currentpage
-  let firstpage =lastpage - perpage
+  let lastpage = perpage * currentpage
+  let firstpage = lastpage - perpage
   let Allpage = info.slice(firstpage, lastpage)
-// 
+  // 
+  let handeleListitem = () => {
+    console.log("ami");
+  }
+  let handeleListitemright = () => {
+    console.log("ami right");
+  }
+
+  // page number calculation
+
+  let pageNumber = []
+  for(let i = 1; i <Math.ceil(info.length / perpage); i++){
+    pageNumber.push(i)
+  }
+  console.log(pageNumber);
+  
 
   return (
     <Container>
@@ -54,20 +69,20 @@ const Shop = () => {
             <div className=' grid grid-cols-3 items-center'>
               <div>  <p className=' text-end pr-2'>View:</p></div>
               <div className=' flex items-center gap-3 '>
-                <MdOutlinePlaylistAddCheck className='bg-amber-600 text-[25px] py-1 px-1'/>
-                <FaList className='bg-amber-600 text-[25px] py-1 px-1 mr-1'/>
+                <MdOutlinePlaylistAddCheck onClick={handeleListitem} className='bg-amber-600 text-[25px] py-1 px-1' />
+                <FaList onClick={handeleListitemright} className='bg-amber-600 text-[25px] py-1 px-1 mr-1' />
               </div>
               <div className=' border  border-b-gray-900'>
                 <input className='py-2 w-full' type="text" />
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
-    <Products Allpage={Allpage} />
-     <Pagination/>
+      <Products Allpage={Allpage} />
+      <Pagination pageNumber={pageNumber} />
     </Container>
-      
+
   )
 }
 export default Shop
