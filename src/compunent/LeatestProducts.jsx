@@ -3,6 +3,13 @@ import Container from './Container'
 import { FaRegHeart, FaSearchPlus } from 'react-icons/fa'
 import { FaCartShopping } from 'react-icons/fa6'
 import Producta from '../assets/producta.png'
+import Trending from '../assets/Trending.png'
+import Trending1 from '../assets/Trending1.png'
+import Trending2 from '../assets/Trending2.png'
+import Trending3 from '../assets/Trending3.png'
+
+
+
 
 const LeatestProducts = () => {
     return (
@@ -24,7 +31,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending1} alt="" />
 
                                 </div>
                             </div>
@@ -38,7 +45,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending1} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -58,7 +65,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending} alt="" />
 
                                 </div>
                             </div>
@@ -72,7 +79,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -92,7 +99,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending2} alt="" />
 
                                 </div>
                             </div>
@@ -106,7 +113,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending2} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -126,7 +133,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending3} alt="" />
 
                                 </div>
                             </div>
@@ -140,7 +147,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending3} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -162,7 +169,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending3} alt="" />
 
                                 </div>
                             </div>
@@ -176,7 +183,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending3} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -196,7 +203,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending1} alt="" />
 
                                 </div>
                             </div>
@@ -210,7 +217,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending1} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -230,7 +237,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending2} alt="" />
 
                                 </div>
                             </div>
@@ -244,7 +251,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending2} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -264,7 +271,7 @@ const LeatestProducts = () => {
                         <div className='mt-7 w-[100%] shadow-2xl '>
                             <div className='relative'>
                                 <div className=' bg-[#F7F7F7]'>
-                                    <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                    <img className='mx-auto pt-9 ' src={Trending2} alt="" />
 
                                 </div>
                             </div>
@@ -278,7 +285,7 @@ const LeatestProducts = () => {
                             <div className='mt-7 w-[100%] shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                 <div className='relative'>
                                     <div className=' bg-[#F6F7FB]  '>
-                                        <img className='mx-auto pt-9 ' src={Producta} alt="" />
+                                        <img className='mx-auto pt-9 ' src={Trending2} alt="" />
                                         <div className='flex '>
                                             <div className=' left-[20px] bottom-[80px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                             <div className=' left-[20px] bottom-[50px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -295,6 +302,7 @@ const LeatestProducts = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
         </Container>
     )

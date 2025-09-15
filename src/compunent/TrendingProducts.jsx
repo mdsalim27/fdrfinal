@@ -11,7 +11,7 @@ const TrendingProducts = () => {
     return (
         <Container>
 
-            <div className=' my-5 bg-[#F5F6F8] cursor-pointer '>
+             <div className=' my-5 bg-[#F5F6F8] cursor-pointer '>
                 <div>
                     <h2 className='text-[#151875] text-center text-[30px] font-extrabold py-8'>Trending Products</h2>
                 </div>
@@ -71,7 +71,7 @@ const TrendingProducts = () => {
                     </div>
 
                 </div>
-            </div>
+            </div> 
         </Container>
     )
 }

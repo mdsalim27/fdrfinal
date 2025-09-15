@@ -12,9 +12,9 @@ const Products = ({Allpage}) => {
   {
         <div className='flex flex-wrap'>{
           Allpage.map((item) => (
-            <div className=' relative w-[24%]  '>
+            <div className=' relative w-[24%] my-3  '>
               <Link to={"/productDet"}>
-                <div className='shadow-2xl mx-1'>
+                <div className='shadow-2xl mx-1 '>
                   <div className='relative'>
                     <div className=' bg-[#F6F7FB] '>
                       <img className='mx-auto  ' src={item.image_path} alt="" />
@@ -23,12 +23,15 @@ const Products = ({Allpage}) => {
                   <div className='text-center'>
                     <h3 className=' font-bold py-1 text-[#FB2E86]'>{item.name}</h3>
                     <div className='flex justify-center py-1  '>
-                      <div className='w-[15px] h-[4px] bg-[#05E6B7] flex justify-center ml-3'></div>
-                      <div className='w-[15px] h-[4px] bg-[#F701A8] flex justify-center ml-3'></div>
-                      <div className='w-[15px] h-[4px] bg-[#00009D] flex justify-center ml-3'></div>
+                      <div className='w-[10px] h-[10px] border rounded-full bg-[#05E6B7] flex justify-center ml-3'></div>
+                      <div className='w-[10px] h-[10px] border rounded-full bg-[#F701A8] flex justify-center ml-3'></div>
+                      <div className='w-[10px] h-[10px] border rounded-full bg-[#00009D] flex justify-center ml-3'></div>
                     </div>
-                    <p className='py-1'>{item.id}</p>
-                    <p className='py-1 flex justify-evenly'><span className='font-extrabold'>Price:</span>{'$' + '' + item.price}</p>
+                    {/* <p className='py-1'>{item.id}</p> */}
+                    <div className='grid grid-cols-2'>
+                    <p className='py-1 flex justify-evenly'><span className='font-extrabold'></span>{'$' + '' + item.discount_price}</p>
+                    <p className='py-1 flex justify-evenly line-through text-[#FB2E86]'><span className='font-extrabold'></span>{'$' + '' + item.price}</p>
+                    </div>
                   </div>
                   {/* hovar mart /////////////////////////////////////////////////////////////////////////////// */}
                   <div className='w-[100%]  shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
@@ -43,15 +46,18 @@ const Products = ({Allpage}) => {
                         </div>
                       </div>
                     </div>
-                    <div className='text-center bg-[blue] text-[#FFF]'>
+                    <div className='text-center bg-[#5151ec] text-[#FFF]'>
                       <h3 className=' font-bold py-1 '>{item.name}</h3>
                       <div className='flex justify-center py-1  '>
-                        <div className='w-[15px] h-[4px] bg-[#05E6B7] flex justify-center ml-3'></div>
-                        <div className='w-[15px] h-[4px] bg-[#F701A8] flex justify-center ml-3'></div>
-                        <div className='w-[15px] h-[4px] bg-[#FFEAC1] flex justify-center ml-3'></div>
+                        <div className='w-[10px] h-[10px] border rounded-full bg-[#05E6B7] flex justify-center ml-3'></div>
+                        <div className='w-[10px] h-[10px] border rounded-full bg-[#F701A8] flex justify-center ml-3'></div>
+                        <div className='w-[10px] h-[10px] border rounded-full bg-[#FFEAC1] flex justify-center ml-3'></div>
                       </div>
-                      <p className='py-1'>{item.id} </p>
-                      <p className='py-1 flex justify-evenly'><span className='font-extrabold'>Price:</span>{'$' + '' + item.price}</p>
+                      {/* <p className='py-1'>{item.id} </p> */}
+                      <div className='grid grid-cols-2'>
+                    <p className='py-1 flex justify-evenly '><span className='font-extrabold'></span>{'$' + '' + item.discount_price}</p>
+                    <p className='py-1 flex justify-evenly line-through text-[#FB2E86]'><span className='font-extrabold'></span>{'$' + '' + item.price}</p>
+                    </div>
                     </div>
                   </div>
                 </div>

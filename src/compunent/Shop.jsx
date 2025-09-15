@@ -7,14 +7,15 @@ import Products from './Products'
 import { ApiData } from './ContextApi'
 
 const Shop = () => {
+  // api data 
     let info = useContext(ApiData)
-
+// perpage currentpage pagenumber
   let [perpage, setParpage] = useState(12)
   let [currentpage, setCurrentpage] = useState(1)
-  
   let lastpage =perpage * currentpage
   let firstpage =lastpage - perpage
   let Allpage = info.slice(firstpage, lastpage)
+// 
 
   return (
     <Container>
