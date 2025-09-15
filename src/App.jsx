@@ -8,6 +8,9 @@ import { createBrowserRouter, createRoutesFromElements, Outlet, Route, Router, R
 import Shop from './compunent/Shop'
 import Home from './page/Home'
 import Contact from './compunent/Contact'
+import Products from './compunent/Products'
+import Blog from './compunent/Blog'
+import Page from './compunent/Page'
 
 
 
@@ -16,6 +19,9 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Home />}></Route>
     <Route path='/shop' element={<Shop />}></Route>
     <Route path='/contact' element={<Contact />}></Route>
+    <Route path='/products' element={<Shop />}></Route>
+    <Route path='/Blog' element={<Blog />}></Route>
+    <Route path='/pages' element={<Page />}></Route>
    
   </Route>
 

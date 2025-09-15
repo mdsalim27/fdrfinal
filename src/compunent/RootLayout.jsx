@@ -12,6 +12,7 @@ import DiscountItem from './DiscountItem'
 import TopCategories from './TopCategories'
 import GetLeates from './GetLeates'
 import Footer from './Footer'
+import Companyspons from './Companyspons'
 // import Home from '../page/Home'
 
 
@@ -19,12 +20,12 @@ import Footer from './Footer'
 
 const RootLayout = () => {
     return (
-        <div>      
+        <div>
             {/* <Home/> */}
-             <Menu/> 
+            <Menu />
             <Navbar />
             {/* <Product/> */}
-             {/* <Banner/>
+            {/* <Banner/>
             <LeatestProducts/>
             <Support/>
             <BanAdd/>
@@ -32,8 +33,9 @@ const RootLayout = () => {
             <DiscountItem/>
             <TopCategories/>
             <GetLeates/> */}
-            <Outlet /> 
-            <Footer/>
+            <Outlet />
+            <Companyspons />
+            <Footer />
         </div>
     )
 }

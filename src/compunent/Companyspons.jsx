@@ -4,7 +4,7 @@ import Container from './Container'
 const Companyspons = () => {
     return (
         <Container>
-            <div className='flex justify-center mb-5'>
+            <div className='flex justify-center my-7'>
                 <img src={Company} alt="" />
             </div>
         </Container>

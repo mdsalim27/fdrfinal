@@ -10,33 +10,24 @@ import TrendingProducts from '../compunent/TrendingProducts'
 import DiscountItem from '../compunent/DiscountItem'
 import TopCategories from '../compunent/TopCategories'
 import GetLeates from '../compunent/GetLeates'
-import Companyspons from '../compunent/Companyspons'
 import LeatestBlogg from '../compunent/LeatestBlogg'
-import Pagination from '../compunent/Pagination'
-// import ProductDet from '../compunent/ProductDet'
+// import Pagination from '../compunent/Pagination'
 
 const Home = () => {
   return (
     <div>
-        {/* <Menu/> */}
-        {/* <Navbar/> */}
-        
-        <Pagination/>
-        <Banner/>
-        <Product/>
-        <LeatestProducts/>
-        <Support/>
-        <BanAdd/>
-        <TrendingProducts/>
-        <DiscountItem/>
-        <TopCategories/>
-        <GetLeates/>
-        <Companyspons/>
-        <LeatestBlogg/>
-        
-         
+      <Banner />
+      <Product />
+      <LeatestProducts />
+      <Support />
+      <BanAdd />
+      <TrendingProducts />
+      <DiscountItem />
+      <TopCategories />
+      <GetLeates />
+      <LeatestBlogg />
+      {/* <Pagination /> */}
     </div>
   )
 }
-
 export default Home

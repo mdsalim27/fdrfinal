@@ -1,72 +1,72 @@
-import React, { useContext } from 'react'
-import { ApiData } from './ContextApi'
-import { DiMagento } from 'react-icons/di'
-import { FaCartShopping } from 'react-icons/fa6'
-import { FaRegHeart, FaSearchPlus } from 'react-icons/fa'
+import React, { useContext, useState } from 'react'
+import { FaList, FaRegHeart, FaSearchPlus } from 'react-icons/fa'
 import Container from './Container'
-import { Link } from 'react-router-dom'
+import { MdOutlinePlaylistAddCheck } from 'react-icons/md'
+import Pagination from './Pagination'
+import Products from './Products'
+import { ApiData } from './ContextApi'
 
 const Shop = () => {
-  let info = useContext(ApiData)
+    let info = useContext(ApiData)
+
+  let [perpage, setParpage] = useState(12)
+  let [currentpage, setCurrentpage] = useState(1)
+  
+  let lastpage =perpage * currentpage
+  let firstpage =lastpage - perpage
+  let Allpage = info.slice(firstpage, lastpage)
+
   return (
     <Container>
-
-
-      {
-        <div className='flex flex-wrap'>{
-          info.map((item) => (
-            <div className=' relative w-[24%]  '>
-              <Link to={"/productDet"}>
-                <div className='shadow-2xl mx-1'>
-                  <div className='relative'>
-                    <div className=' bg-[#F6F7FB] '>
-                      <img className='mx-auto  ' src={item.image_path} alt="" />
-                    </div>
-                  </div>
-                  <div className='text-center'>
-                    <h3 className=' font-bold py-1 text-[#FB2E86]'>{item.name}</h3>
-                    <div className='flex justify-center py-1  '>
-                      <div className='w-[15px] h-[4px] bg-[#05E6B7] flex justify-center ml-3'></div>
-                      <div className='w-[15px] h-[4px] bg-[#F701A8] flex justify-center ml-3'></div>
-                      <div className='w-[15px] h-[4px] bg-[#00009D] flex justify-center ml-3'></div>
-                    </div>
-                    <p className='py-1'>{item.id}</p>
-                    <p className='py-1 flex justify-evenly'><span className='font-extrabold'>Price:</span>{'$' + '' + item.price}</p>
-                  </div>
-                  {/* hovar mart /////////////////////////////////////////////////////////////////////////////// */}
-                  <div className='w-[100%]  shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
-                    <div className='relative mx-1'>
-                      <div className=' bg-[#F7F7F7]'>
-                        <img className='mx-auto  ' src={item.image_path} alt="" />
-                        <div className='flex '>
-                          <div className=' top-[1px] left-[40px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
-                          <div className=' top-[1px] left-[80px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
-                          <div className=' top-[1px] left-[120px] mt-6  absolute cursor-pointer'><FaSearchPlus /></div>
-                          <div className='left-[50%] translate-x-[-50%] bottom-2 bg-[#08D15F] text-[#FFFFFF] py-1 px-3 absolute cursor-pointer'>View Details</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='text-center bg-[blue] text-[#FFF]'>
-                      <h3 className=' font-bold py-1 '>{item.name}</h3>
-                      <div className='flex justify-center py-1  '>
-                        <div className='w-[15px] h-[4px] bg-[#05E6B7] flex justify-center ml-3'></div>
-                        <div className='w-[15px] h-[4px] bg-[#F701A8] flex justify-center ml-3'></div>
-                        <div className='w-[15px] h-[4px] bg-[#FFEAC1] flex justify-center ml-3'></div>
-                      </div>
-                      <p className='py-1'>{item.id} </p>
-                      <p className='py-1 flex justify-evenly'><span className='font-extrabold'>Price:</span>{'$' + '' + item.price}</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-          ))}
+      <div className=' grid grid-cols-2 items-center py-10'>
+        <div>
+          <h2 className=' text-[#151875] text-[30px] font-bold'>Ecommerce Acceories & Fashion item </h2>
+          <p className='text-[#8A8FB9] font-medium text-[16px]'>About 9,620 results (0.62 seconds)</p>
+          {/* <p> Per Page:Sort By:Best MatchView:About 9,620 results (0.62 seconds)</p> */}
         </div>
-      }
+        <div className='grid grid-cols-3 items-center'>
+          <div>
+            <div>
+              <label className='px-2' pr-2 htmlFor="">Per Page:</label>
+              <select name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+                <option value="1"> 1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <div>
+              <label className='px-2' pr-2 htmlFor="">Sort By:</label>
+              <select name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+                <option value="1">Best Match</option>
+                <option value="2">Best Match1</option>
+                <option value="3">Best Match2</option>
+                <option value="4">Best Match3</option>
+                <option value="5">Best Match4</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <div className=' grid grid-cols-3 items-center'>
+              <div>  <p className=' text-end pr-2'>View:</p></div>
+              <div className=' flex items-center gap-3 '>
+                <MdOutlinePlaylistAddCheck className='bg-amber-600 text-[25px] py-1 px-1'/>
+                <FaList className='bg-amber-600 text-[25px] py-1 px-1 mr-1'/>
+              </div>
+              <div className=' border  border-b-gray-900'>
+                <input className='py-2 w-full' type="text" />
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    <Products Allpage={Allpage} />
+     <Pagination/>
     </Container>
-
+      
   )
 }
-
 export default Shop
