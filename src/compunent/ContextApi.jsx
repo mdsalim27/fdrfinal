@@ -1,23 +1,56 @@
 
-import axios from 'axios'
-import React, { createContext, useEffect, useState } from 'react'
-let ApiData = createContext()
+// import axios from 'axios'
+// import React, { createContext, useEffect, useState } from 'react'
+// let ApiData = createContext([])
+// const ContextApi = ({ children }) => {
+//   let [info, setInfo] = useState([])
+//   let getData = () => {
+//     axios.get("https://furniture-api.fly.dev/v1/products?limit=100&offset=0").then((responce) => {
+//       setInfo(responce.data.data);   
+//     })
+//   }
+//   useEffect(() => {
+//     getData()
+//   }, [])
+//   return (
+//     <>
+//       <ApiData.Provider value={info}>{children}</ApiData.Provider>    
+//     </>
+//   )
+// }
+// export { ContextApi, ApiData }
+
+
+
+import axios from "axios";
+import React, { createContext, useEffect, useState } from "react";
+let ApiData = createContext([]);
 const ContextApi = ({ children }) => {
-  let [info, setInfo] = useState([])
-  let getData = () => {
-    axios.get("https://furniture-api.fly.dev/v1/products?limit=100&offset=0").then((responce) => {
-      setInfo(responce.data.data);
-      console.log(responce);
-      
-    })
-  }
+  let [info, setInfo] = useState([]);
+  let [loading, setLoading] = useState(true);
+  let [error, setError] = useState(null);
+  let getData = async () => {
+    try {
+      let response = await axios.get(
+        "https://furniture-api.fly.dev/v1/products?limit=100&offset=0"
+      );
+      setInfo(response.data.data);
+    } catch (err) {
+      console.error("Error fetching products:", err);
+      setError(err.message);
+      setInfo([]);
+    } finally {
+      setLoading(false);
+    }
+  };
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
+
   return (
-    <>
-      <ApiData.Provider value={info}>{children}</ApiData.Provider>
-    </>
-  )
-}
-export { ContextApi, ApiData }
+    <ApiData.Provider value={{ info, loading, error }}>
+      {children}
+    </ApiData.Provider>
+  );
+};
+export { ContextApi, ApiData };

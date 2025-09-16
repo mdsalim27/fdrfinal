@@ -7,8 +7,14 @@ import Products from './Products'
 import { ApiData } from './ContextApi'
 
 const Shop = () => {
+
+let { info, loading, error } = useContext(ApiData);
+if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
+if (error) return <p>Error: {error}</p>;
+
+
   // api data 
-  let info = useContext(ApiData)
+  // let info = useContext(ApiData)
   // perpage currentpage pagenumber
   let [perpage, setParpage] = useState(12)
   let [currentpage, setCurrentpage] = useState(1)
@@ -22,16 +28,12 @@ const Shop = () => {
   let handeleListitemright = () => {
     console.log("ami right");
   }
-
   // page number calculation
 
   let pageNumber = []
   for(let i = 1; i <Math.ceil(info.length / perpage); i++){
     pageNumber.push(i)
   }
-  console.log(pageNumber);
-  
-
   return (
     <Container>
       <div className=' grid grid-cols-2 items-center py-10'>
@@ -82,7 +84,6 @@ const Shop = () => {
       <Products Allpage={Allpage} />
       <Pagination pageNumber={pageNumber} />
     </Container>
-
   )
 }
 export default Shop

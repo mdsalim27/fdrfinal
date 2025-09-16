@@ -56,7 +56,7 @@ const Products = ({Allpage}) => {
                       {/* <p className='py-1'>{item.id} </p> */}
                       <div className='grid grid-cols-2'>
                     <p className='py-1 flex justify-evenly '><span className='font-extrabold'></span>{'$' + '' + item.discount_price}</p>
-                    <p className='py-1 flex justify-evenly line-through text-[#FB2E86]'><span className='font-extrabold'></span>{'$' + '' + item.price}</p>
+                    <p className='py-1 flex justify-evenly line-through text-[#FFFFFF]'><span className='font-extrabold'></span>{'$' + '' + item.price}</p>
                     </div>
                     </div>
                   </div>

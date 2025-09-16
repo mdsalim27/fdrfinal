@@ -12,8 +12,6 @@ import Products from './compunent/Products'
 import Blog from './compunent/Blog'
 import Page from './compunent/Page'
 
-
-
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<RootLayout />}>
     <Route path='/' element={<Home />}></Route>
@@ -22,7 +20,6 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='/products' element={<Shop />}></Route>
     <Route path='/Blog' element={<Blog />}></Route>
     <Route path='/pages' element={<Page />}></Route>
-   
   </Route>
 
 ))

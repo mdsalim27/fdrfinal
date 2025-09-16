@@ -32,10 +32,11 @@ function SamplePrevArrow(props) {
 
 
 const Product = () => {
-    let Data = useContext(ApiData)
+    let { info, loading, error } = useContext(ApiData);
+if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
+    // let Data = useContext(ApiData)
     let [allproduct, setAllproduct] = useState([])
-
-
     var settings = {
         dots:false,
         infinite: true,
@@ -56,7 +57,7 @@ const Product = () => {
 
                     <Slider {...settings}>
                         {
-                            Data.map((item) => (
+                            info.map((item) => (
 
                                 <div className=' relative  '>
                                     <Link to={"/shop"}>
@@ -65,9 +66,7 @@ const Product = () => {
 
                                             <div className='relative'>
                                                 <div className=' bg-[#F6F7FB] '>
-
                                                     <img className='mx-auto  ' src={item.image_path} alt="" />
-
                                                 </div>
                                             </div>
                                             <div className='text-center'>
@@ -110,10 +109,7 @@ const Product = () => {
                             ))
                         }
                     </Slider>
-
                 </div>
-
-
             </Container>
         </section>
     )
