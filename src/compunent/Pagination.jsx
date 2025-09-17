@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pagination = ({pageNumber , paginate ,Next ,Prev ,currentpage}) => {
+const Pagination = ({pageNumber , paginate ,Next ,Prev ,currentpage }) => {
  
   console.log(currentpage);
   

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaList, FaRegHeart, FaSearchPlus } from 'react-icons/fa'
 import Container from './Container'
 import { MdOutlinePlaylistAddCheck } from 'react-icons/md'
@@ -55,8 +55,19 @@ const Shop = () => {
     setParpage(e.target.value); 
   }
 
-// 
-
+// chatagori show
+let [catagory ,setCatagory] =useState([])
+ 
+useEffect (()=>{
+setCatagory([...new Set (info.map((item)=>item.category)) ])
+},[info])
+console.log(catagory);
+let [filtershow , setFiltershow] = useState([])
+let handeleCatagory = (e)=>{
+let catproduct = e.target.value
+let catproduc = info.filter((item)=>item.category === catproduct)
+setFiltershow(catproduc)
+}
     return (
       <Container>
         <div className=' grid grid-cols-2 items-center py-10'>
@@ -81,12 +92,10 @@ const Shop = () => {
             <div>
               <div>
                 <label className='px-2' pr-2 htmlFor="">Sort By:</label>
-                <select name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
-                  <option value="1">Best Match</option>
-                  <option value="2">Best Match1</option>
-                  <option value="3">Best Match2</option>
-                  <option value="4">Best Match3</option>
-                  <option value="5">Best Match4</option>
+                <select onChange={handeleCatagory} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+                  {catagory.map((item)=>(
+                  <option value={item}>{item}</option>
+                  ))}               
                 </select>
               </div>
             </div>
@@ -104,10 +113,10 @@ const Shop = () => {
             </div>
           </div>
         </div>
-        <Products Allpage={Allpage} />
+        <Products Allpage={Allpage} filtershow={filtershow} />
 
         <Pagination pageNumber={pageNumber} paginate={paginate} Next={Next} Prev={Prev}
-          currentpage={currentpage} />
+          currentpage={currentpage}  />
       </Container>
     )
   }
