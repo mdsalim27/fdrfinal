@@ -1,19 +1,10 @@
-import React, { useContext } from 'react'
-import Container from './Container'
-import { ApiData } from './ContextApi'
+import React from 'react'
 
 const ProductDet = () => {
-    let data = useContext(ApiData)
   return (
-<Container>
     <div>
-        {
-            data.map((item)=>(
-                <div> <img src={item.image_path} alt="" /></div>
-            ))
-        }
+      <h1>Lorem ipsum dolor sit amet consectetur.</h1>
     </div>
-</Container>
   )
 }
 

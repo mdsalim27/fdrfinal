@@ -13,7 +13,7 @@ const Products = ({Allpage}) => {
         <div className='flex flex-wrap'>{
           Allpage.map((item) => (
             <div className=' relative w-[24%] my-3  '>
-              <Link to={"/productDet"}>
+              <Link to={`/shop/${item.id}`}>
                 <div className='shadow-2xl mx-1 '>
                   <div className='relative'>
                     <div className=' bg-[#F6F7FB] '>

@@ -11,11 +11,14 @@ import Contact from './compunent/Contact'
 import Products from './compunent/Products'
 import Blog from './compunent/Blog'
 import Page from './compunent/Page'
+import ProductDet from './compunent/ProductDet'
+
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<RootLayout />}>
     <Route path='/' element={<Home />}></Route>
     <Route path='/shop' element={<Shop />}></Route>
+    <Route path='/shop/:id' element={<ProductDet/>}></Route>
     <Route path='/contact' element={<Contact />}></Route>
     <Route path='/products' element={<Shop />}></Route>
     <Route path='/Blog' element={<Blog />}></Route>
