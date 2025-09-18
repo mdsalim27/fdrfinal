@@ -27,12 +27,11 @@ function SamplePrevArrow(props) {
 
 
 const TopCategories = () => {
-  let { info, loading, error } = useContext(ApiData);
+//   let { info, loading, error } = useContext(ApiData);
+// if (loading) return <p>Loading...</p>;
 
-if (loading) return <p>Loading...</p>;
-if (error) return <p>Error: {error}</p>;
 
-  // let data = useContext(ApiData)
+  let info = useContext(ApiData)
   var settingss = {
     dots:false,
     infinite: true,

@@ -9,16 +9,16 @@ import { FaSearchPlus } from 'react-icons/fa'
 const Products = ({ Allpage, filtershow }) => {
   return (<>
     <Container>
-
-        console.log(filtershow);
       <div>
         {
           filtershow.length > 0 ?
-          
+
             <div className='flex flex-wrap'>{
               filtershow.map((item) => (
                 <div className=' relative w-[24%] my-3  '>
+
                   <Link to={`/shop/${item.id}`}>
+                  
                     <div className='shadow-2xl mx-1 '>
                       <div className='relative'>
                         <div className=' bg-[#F6F7FB] '>
@@ -73,7 +73,7 @@ const Products = ({ Allpage, filtershow }) => {
             <div className='flex flex-wrap'>{
               Allpage.map((item) => (
                 <div className=' relative w-[24%] my-3  '>
-                  <Link to={`/shop/${item.id}`}>
+                  <Link to={`/shop/${item.name}`}>
                     <div className='shadow-2xl mx-1 '>
                       <div className='relative'>
                         <div className=' bg-[#F6F7FB] '>

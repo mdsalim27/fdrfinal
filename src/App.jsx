@@ -18,20 +18,18 @@ let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<RootLayout />}>
     <Route path='/' element={<Home />}></Route>
     <Route path='/shop' element={<Shop />}></Route>
-    <Route path='/shop/:id' element={<ProductDet/>}></Route>
+
+    <Route path="/shop/:id" element={<ProductDet />}></Route>
+
     <Route path='/contact' element={<Contact />}></Route>
     <Route path='/products' element={<Shop />}></Route>
     <Route path='/Blog' element={<Blog />}></Route>
     <Route path='/pages' element={<Page />}></Route>
   </Route>
-
 ))
-
 function App() {
-
   return (
     <>
-    
       <RouterProvider router={router}></RouterProvider>
     </>
   )

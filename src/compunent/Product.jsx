@@ -32,10 +32,10 @@ function SamplePrevArrow(props) {
 
 
 const Product = () => {
-    let { info, loading, error } = useContext(ApiData);
-if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
-    // let Data = useContext(ApiData)
+//     let { info, loading } = useContext(ApiData);
+// if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
+
+    let info = useContext(ApiData)
     let [allproduct, setAllproduct] = useState([])
     var settings = {
         dots:false,
