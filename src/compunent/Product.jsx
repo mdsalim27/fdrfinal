@@ -32,13 +32,13 @@ function SamplePrevArrow(props) {
 
 
 const Product = () => {
-//     let { info, loading } = useContext(ApiData);
-// if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
+    //     let { info, loading } = useContext(ApiData);
+    // if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
 
     let info = useContext(ApiData)
     let [allproduct, setAllproduct] = useState([])
     var settings = {
-        dots:false,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -47,26 +47,23 @@ const Product = () => {
         prevArrow: <SamplePrevArrow />,
     }
     let handeleallProduct = () => {
-        console.log("ami");
+
     }
     return (
         <section className=''>
             <Container >
                 <div className='mt-[25px]'><h2 className='text-center font-bold text-[30px] opacity-100'>Featured Products</h2></div>
                 <div className='' onClick={handeleallProduct}>
-
                     <Slider {...settings}>
                         {
                             info.map((item) => (
-
                                 <div className=' relative  '>
                                     <Link to={"/shop"}>
-
                                         <div className='shadow-2xl mx-1'>
-
                                             <div className='relative'>
                                                 <div className=' bg-[#F6F7FB] '>
-                                                    <img className='mx-auto  ' src={item.image_path} alt="" />
+                                                    {/* <img className='mx-auto  ' src={item.image_path} alt="" /> */}
+                                                    <img className='mx-auto  ' src={item.thumbnail} alt="" />
                                                 </div>
                                             </div>
                                             <div className='text-center'>
@@ -83,7 +80,7 @@ const Product = () => {
                                             <div className='w-[100%]  shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                                                 <div className='relative mx-1'>
                                                     <div className=' bg-[#F7F7F7]'>
-                                                        <img className='mx-auto  ' src={item.image_path} alt="" />
+                                                        <img className='mx-auto  ' src={item.thumbnail} alt="" />
                                                         <div className='flex '>
                                                             <div className=' top-[1px] left-[40px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                                                             <div className=' top-[1px] left-[80px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>

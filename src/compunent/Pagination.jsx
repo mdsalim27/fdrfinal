@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pagination = ({pageNumber , paginate ,Next ,Prev ,currentpage }) => {
  
-  console.log(currentpage);
+
   
   return (
     <div className='text-end mr-15 mt-4'>

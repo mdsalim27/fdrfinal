@@ -4,6 +4,7 @@ import { SiGmail } from 'react-icons/si'
 import { MdOutlineWifiCalling3 } from 'react-icons/md'
 import { GiHumanTarget } from 'react-icons/gi'
 import { CiHeart, CiShoppingCart } from 'react-icons/ci'
+import { Link } from 'react-router-dom'
 
 const Menu = () => {
     return (
@@ -38,13 +39,17 @@ const Menu = () => {
                                 <option className='bg-[#7474ac]' value="Tether">USDT</option>
                             </select>
                         </div>
-                        <div className='flex items-center gap-3 text-[#F1F1F1] '>
-                            <div><h2>Login</h2></div>
-                            <div><GiHumanTarget/></div>
-                        </div>
+
+                        <Link to={"/loginpage"}>
+                            <div className='flex items-center gap-3 text-[#F1F1F1] hover:font-extrabold hover:text-[20px] '>
+                                <div><h2>Login</h2></div>
+                                <div><GiHumanTarget /></div>
+                            </div>
+                        </Link>
+
                         <div className='flex items-center gap-3 text-[#F1F1F1] mx-5'>
                             <div><p>Wishlist</p></div>
-                            <div><CiHeart  />  </div>
+                            <div><CiHeart />  </div>
                             <div className='ml-4 '><CiShoppingCart className='' /></div>
                         </div>
                     </div>

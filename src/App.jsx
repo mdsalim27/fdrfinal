@@ -12,11 +12,21 @@ import Products from './compunent/Products'
 import Blog from './compunent/Blog'
 import Page from './compunent/Page'
 import ProductDet from './compunent/ProductDet'
+import LoginPage from './compunent/LoginPage'
+import SignUpPage from './compunent/SignUpPage'
+import ForgotPasswordPagecode from './compunent/ForgotPasswordPagecode'
+import ForgotPasswordPage from './compunent/ForgotPasswordPage'
 
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<RootLayout />}>
     <Route path='/' element={<Home />}></Route>
+    <Route path='/loginpage' element={<LoginPage />}></Route>
+    <Route path='/signuppage' element={<SignUpPage />}></Route>
+    <Route path='/forgotpasswordpagecode' element={<ForgotPasswordPagecode />}></Route>
+    <Route path='/forgotpasswordpage' element={<ForgotPasswordPage />}></Route>
+
+
     <Route path='/shop' element={<Shop />}></Route>
 
     <Route path="/shop/:id" element={<ProductDet />}></Route>

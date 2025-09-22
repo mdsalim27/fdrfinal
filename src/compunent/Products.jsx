@@ -17,12 +17,12 @@ const Products = ({ Allpage, filtershow }) => {
               filtershow.map((item) => (
                 <div className=' relative w-[24%] my-3  '>
 
-                  <Link to={`/shop/${item.id}`}>
+                  <Link to={`/shop/:${item.id}`}>
                   
                     <div className='shadow-2xl mx-1 '>
                       <div className='relative'>
                         <div className=' bg-[#F6F7FB] '>
-                          <img className='mx-auto  ' src={item.image_path} alt="" />
+                          <img className='mx-auto  ' src={item.thumbnail} alt="" />
                         </div>
                       </div>
                       <div className='text-center'>
@@ -42,7 +42,7 @@ const Products = ({ Allpage, filtershow }) => {
                       <div className='w-[100%]  shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
                         <div className='relative mx-1'>
                           <div className=' bg-[#F7F7F7]'>
-                            <img className='mx-auto  ' src={item.image_path} alt="" />
+                            <img className='mx-auto  ' src={item.thumbnail} alt="" />
                             <div className='flex '>
                               <div className=' top-[1px] left-[40px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                               <div className=' top-[1px] left-[80px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>
@@ -73,11 +73,12 @@ const Products = ({ Allpage, filtershow }) => {
             <div className='flex flex-wrap'>{
               Allpage.map((item) => (
                 <div className=' relative w-[24%] my-3  '>
-                  <Link to={`/shop/${item.name}`}>
+                  <Link to={`/shop/${item.id}`}>
                     <div className='shadow-2xl mx-1 '>
                       <div className='relative'>
                         <div className=' bg-[#F6F7FB] '>
-                          <img className='mx-auto  ' src={item.image_path} alt="" />
+                          {/* <img className='mx-auto  ' src={item.image_path} alt="" /> */}
+                          <img className='mx-auto  ' src={item.thumbnail} alt="" />
                         </div>
                       </div>
                       <div className='text-center'>
@@ -94,10 +95,10 @@ const Products = ({ Allpage, filtershow }) => {
                         </div>
                       </div>
                       {/* hovar mart /////////////////////////////////////////////////////////////////////////////// */}
-                      <div className='w-[100%]  shadow-2xl absolute top-0 left-0 opacity-0 hover:opacity-100 '>
+                      <div className='w-[100%]  shadow-2xl absolute bottom-0 left-0 opacity-0 hover:opacity-100 '>
                         <div className='relative mx-1'>
                           <div className=' bg-[#F7F7F7]'>
-                            <img className='mx-auto  ' src={item.image_path} alt="" />
+                            <img className='mx-auto  ' src={item.thumbnail} alt="" />
                             <div className='flex '>
                               <div className=' top-[1px] left-[40px]  mt-6 absolute cursor-pointer'><FaCartShopping /></div>
                               <div className=' top-[1px] left-[80px]  mt-6 absolute cursor-pointer'><FaRegHeart /></div>

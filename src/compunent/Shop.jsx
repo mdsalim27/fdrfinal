@@ -5,6 +5,7 @@ import { MdOutlinePlaylistAddCheck } from 'react-icons/md'
 import Pagination from './Pagination'
 import Products from './Products'
 import { ApiData } from './ContextApi'
+import { Link } from 'react-router-dom'
 
 const Shop = () => {
 
@@ -61,7 +62,7 @@ const Shop = () => {
   useEffect(() => {
     setCatagory([...new Set(info.map((item) => item.category))])
   }, [info])
-  console.log(catagory);
+ 
   let [filtershow, setFiltershow] = useState([])
   let handeleCatagory = (e) => {
     let catproduct = e.target.value
@@ -86,6 +87,8 @@ const Shop = () => {
                 <option value="36">36</option>
                 <option value="40">40</option>
                 <option value="50">50</option>
+                <option value="70">70</option>
+                <option value="100">100</option>
               </select>
             </div>
           </div>
@@ -113,7 +116,10 @@ const Shop = () => {
           </div>
         </div>
       </div>
+                   
+
       <Products Allpage={Allpage} filtershow={filtershow} />
+
 
       <Pagination pageNumber={pageNumber} paginate={paginate} Next={Next} Prev={Prev}
         currentpage={currentpage} />

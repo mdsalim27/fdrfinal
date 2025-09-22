@@ -11,21 +11,22 @@ import DiscountItem from '../compunent/DiscountItem'
 import TopCategories from '../compunent/TopCategories'
 import GetLeates from '../compunent/GetLeates'
 import LeatestBlogg from '../compunent/LeatestBlogg'
-// import Pagination from '../compunent/Pagination'
+import ForgotPasswordPage from '../compunent/ForgotPasswordPage'
+import ForgotPasswordPagecode from '../compunent/ForgotPasswordPagecode'
 
 const Home = () => {
   return (
     <div>
-      <Banner />
+      {/* <Banner /> */}
       <Product />
-      <LeatestProducts />
+      {/* <LeatestProducts />
       <Support />
       <BanAdd />
       <TrendingProducts />
       <DiscountItem />
       <TopCategories />
       <GetLeates />
-      <LeatestBlogg />
+      <LeatestBlogg /> */}
       {/* <Pagination /> */}
     </div>
   )
