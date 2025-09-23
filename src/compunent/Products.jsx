@@ -12,7 +12,6 @@ const Products = ({ Allpage, filtershow }) => {
       <div>
         {
           filtershow.length > 0 ?
-
             <div className='flex flex-wrap'>{
               filtershow.map((item) => (
                 <div className=' relative w-[24%] my-3  '>

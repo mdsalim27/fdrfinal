@@ -13,12 +13,14 @@ import GetLeates from '../compunent/GetLeates'
 import LeatestBlogg from '../compunent/LeatestBlogg'
 import ForgotPasswordPage from '../compunent/ForgotPasswordPage'
 import ForgotPasswordPagecode from '../compunent/ForgotPasswordPagecode'
+import SingelProduct from '../compunent/SingelProduct'
 
 const Home = () => {
   return (
     <div>
       {/* <Banner /> */}
       <Product />
+      <SingelProduct/>
       {/* <LeatestProducts />
       <Support />
       <BanAdd />

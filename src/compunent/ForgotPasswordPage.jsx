@@ -11,7 +11,7 @@ const ForgotPasswordPage = () => {
                 </h2>
 
                 <p className="text-center text-sm text-gray-600 mb-6">
-                    Enter your registered email address, and we’ll send you a link to reset your password.
+                    Enter your registered email address/phone, and we’ll send you a Send code  to reset your password.
                 </p>
 
                 <form action="#" method="POST" className="space-y-5">

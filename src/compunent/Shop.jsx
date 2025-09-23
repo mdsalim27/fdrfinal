@@ -11,7 +11,7 @@ const Shop = () => {
 
   // let { info, loading } = useContext(ApiData);
   // if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
- 
+
 
 
   // api data 
@@ -62,64 +62,78 @@ const Shop = () => {
   useEffect(() => {
     setCatagory([...new Set(info.map((item) => item.category))])
   }, [info])
- 
+
   let [filtershow, setFiltershow] = useState([])
   let handeleCatagory = (e) => {
     let catproduct = e.target.value
     let catproduc = info.filter((item) => item.category === catproduct)
     setFiltershow(catproduc)
   }
+
+  let [allproduct, setAllproduct] = useState([])
+  let handeleAllProduct = () => {
+    setAllproduct(!allproduct)
+  }
   return (
+
     <Container>
-      <div className=' grid grid-cols-2 items-center py-10'>
+
+
+      <div className=' grid grid-cols-3 items-center py-10'>
         <div>
-          <h2 className=' text-[#151875] text-[30px] font-bold'>Ecommerce Acceories & Fashion item </h2>
+          <h2 className=' text-[#151875] text-[23px] font-bold '>Ecommerce Acceories & Fashion item </h2>
           <p className='text-[#8A8FB9] font-medium text-[16px]'>About 9,620 results (0.62 seconds)</p>
           {/* <p> Per Page:Sort By:Best MatchView:About 9,620 results (0.62 seconds)</p> */}
         </div>
-        <div className='grid grid-cols-3 items-center'>
-          <div>
-            <div>
-              <label className='px-2' pr-2 htmlFor="">Per Page:</label>
-              <select onChange={handelePageChange} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
-                <option value="12"> 12</option>
-                <option value="20">20</option>
-                <option value="36">36</option>
-                <option value="40">40</option>
-                <option value="50">50</option>
-                <option value="70">70</option>
-                <option value="100">100</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <div>
-              <label className='px-2' pr-2 htmlFor="">Sort By:</label>
-              <select onChange={handeleCatagory} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
-                {catagory.map((item) => (
-                  <option value={item}>{item}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div>
-            <div className=' grid grid-cols-3 items-center'>
-              <div>  <p className=' text-end pr-2'>View:</p></div>
-              <div className=' flex items-center gap-3 '>
-                <MdOutlinePlaylistAddCheck onClick={handeleListitem} className='bg-amber-600 text-[25px] py-1 px-1' />
-                <FaList onClick={handeleListitemright} className='bg-amber-600 text-[25px] py-1 px-1 mr-1' />
+        <div className=' col-span-2'>
+          <div className='grid grid-cols-3 items-center'>
+
+            <div className=''>
+              <div>
+                <label className='px-2' pr-2 htmlFor="">Per Page:</label>
+                <select onChange={handelePageChange} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+                  <option value="12"> 12</option>
+                  <option value="20">20</option>
+                  <option value="36">36</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                  <option value="70">70</option>
+                  <option value="100">100</option>
+                </select>
               </div>
-              <div className=' border  border-b-gray-900'>
-                <input className='py-2 w-full' type="text" />
+            </div>
+            <div>
+              <div>
+                <label className='px-2' pr-2 htmlFor="">Sort By:</label>
+                <select onChange={handeleCatagory} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+                  {catagory.map((item) => (
+                    <option value={item}>{item}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div>
+              <div className=' flex items-center'>
+                <div>  <p className=' '>View:</p></div>
+                <div className=' flex items-center justify-between  '>
+                  <MdOutlinePlaylistAddCheck onClick={handeleListitem} className='bg-amber-600 text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]' />
+                  {/* <FaList onClick={handeleListitemright} className='bg-amber-600 text-[25px] py-1 px-1 mr-1' /> */}
+                </div>
+                <div className=' border  border-b-gray-900'>
+                  <input className='py-2 w-full' type="text" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-                   
 
-      <Products Allpage={Allpage} filtershow={filtershow} />
 
+      {allproduct ? <Products Allpage={Allpage} filtershow={filtershow} />
+        : <div> hello </div>}
+
+
+      <div onClick={handeleAllProduct}><h2 className='text-[30px] font-bold px-4 cursor-pointer'>Show All</h2></div>
 
       <Pagination pageNumber={pageNumber} paginate={paginate} Next={Next} Prev={Prev}
         currentpage={currentpage} />
