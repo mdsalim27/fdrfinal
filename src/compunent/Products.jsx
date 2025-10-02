@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ApiData } from './ContextApi'
 import { DiMagento } from 'react-icons/di'
@@ -6,18 +6,25 @@ import { FaCartShopping, FaRegHeart } from 'react-icons/fa6'
 import Container from './Container'
 import Shop from './Shop'
 import { FaSearchPlus } from 'react-icons/fa'
-const Products = ({ Allpage, filtershow }) => {
+const Products = ({ Allpage, filtershow ,listitem}) => {
+  
+  let [ cateFilterShow , setCateFilterShow] = useState([])
+
+  useEffect(()=>{
+let cateall = filtershow.slice(0,6)
+setCateFilterShow(cateall)
+  },[filtershow])
+  
   return (<>
     <Container>
       <div>
         {
-          filtershow.length > 0 ?
+          cateFilterShow.length > 0 ?
             <div className='flex flex-wrap'>{
-              filtershow.map((item) => (
-                <div className=' relative w-[24%] my-3  '>
-
+              cateFilterShow.map((item) => (
+                <div className=' relative w-[33%] my-3  '>
                   <Link to={`/shop/:${item.id}`}>
-                  
+
                     <div className='shadow-2xl mx-1 '>
                       <div className='relative'>
                         <div className=' bg-[#F6F7FB] '>
@@ -69,9 +76,10 @@ const Products = ({ Allpage, filtershow }) => {
                 </div>
               ))}
             </div> :
-            <div className='flex flex-wrap'>{
+            
+            <div className={`${listitem == "Active" ? '': `w-full flex flex-wrap `}`} >{
               Allpage.map((item) => (
-                <div className=' relative w-[24%] my-3  '>
+                <div className=' relative w-[33%] my-3  '>
                   <Link to={`/shop/${item.id}`}>
                     <div className='shadow-2xl mx-1 '>
                       <div className='relative'>
@@ -125,12 +133,11 @@ const Products = ({ Allpage, filtershow }) => {
                 </div>
               ))}
             </div>
+            
         }
       </div>
-
     </Container>
   </>
   )
 }
-
 export default Products

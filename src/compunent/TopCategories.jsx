@@ -48,7 +48,7 @@ const TopCategories = () => {
         {
           info.map((item) => (
             <div className='relative'>
-              <div className=''><img className='rounded-full hover:border-l-12 border-[blue] ' src={item.image_path} alt="" />
+              <div className=''><img className='rounded-full hover:border-l-12 border-[blue] ' src={item.thumbnail} alt="" />
               </div>
               <div className='text-center mt-4'>
                 <h2 className='text-[#151875] text-[20px] font-bold '>Mini LCW Chair</h2>

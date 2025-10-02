@@ -3,6 +3,7 @@ import Container from './Container'
 import { IoLogoFacebook } from 'react-icons/io'
 import { FaInstagram, FaTwitter } from 'react-icons/fa'
 import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
     return (<>
         <section className='bg-[#EEEFFB]'>
@@ -14,7 +15,9 @@ const Footer = () => {
                             <div className='mt-10 '>
                                 <div className='flex'>
                                     <div> <input className=' border-1 py-3 px-5' type="text" /> </div>
-                                    <div><button className='bg-[#FB2E86] py-3 px-5'>Sign Up</button></div>
+                                    <Link to={"/signuppage"}>
+                                    <div ><button className='bg-[#FB2E86] py-3 px-5'>Sign Up</button></div>
+                                    </Link>
 
                                 </div>
                                 <div><p className='mt-6 font-black'>Contact Info</p>

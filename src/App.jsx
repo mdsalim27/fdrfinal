@@ -23,12 +23,14 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Home />}></Route>
     <Route path='/loginpage' element={<LoginPage />}></Route>
     <Route path='/signuppage' element={<SignUpPage />}></Route>
+  
     <Route path='/forgotpasswordpagecode' element={<ForgotPasswordPagecode />}></Route>
     <Route path='/forgotpasswordpage' element={<ForgotPasswordPage />}></Route>
 
 
     <Route path='/shop' element={<Shop />}></Route>
 
+    <Route path="/shop/:id" element={<ProductDet />}></Route>
     <Route path="/shop/:id" element={<ProductDet />}></Route>
 
     <Route path='/contact' element={<Contact />}></Route>

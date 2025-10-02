@@ -14,21 +14,24 @@ import LeatestBlogg from '../compunent/LeatestBlogg'
 import ForgotPasswordPage from '../compunent/ForgotPasswordPage'
 import ForgotPasswordPagecode from '../compunent/ForgotPasswordPagecode'
 import SingelProduct from '../compunent/SingelProduct'
+import Products from '../compunent/Products'
+import FPage from '../compunent/FPage'
 
 const Home = () => {
   return (
     <div>
-      {/* <Banner /> */}
+      {/* <FPage /> */}
+      <Banner />
       <Product />
-      <SingelProduct/>
-      {/* <LeatestProducts />
+      {/* <SingelProduct/> */}
+      <LeatestProducts />
       <Support />
       <BanAdd />
       <TrendingProducts />
       <DiscountItem />
       <TopCategories />
       <GetLeates />
-      <LeatestBlogg /> */}
+      <LeatestBlogg />
       {/* <Pagination /> */}
     </div>
   )

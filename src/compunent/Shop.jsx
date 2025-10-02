@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { FaList, FaRegHeart, FaSearchPlus } from 'react-icons/fa'
+import { FaList, FaRegHeart, FaSearchPlus, FaThList } from 'react-icons/fa'
 import Container from './Container'
 import { MdOutlinePlaylistAddCheck } from 'react-icons/md'
 import Pagination from './Pagination'
 import Products from './Products'
 import { ApiData } from './ContextApi'
 import { Link } from 'react-router-dom'
+import SingelProduct from './SingelProduct'
+import FPage from './FPage'
 
 const Shop = () => {
 
@@ -17,18 +19,14 @@ const Shop = () => {
   // api data 
   let info = useContext(ApiData)
   // perpage currentpage pagenumber
-  let [perpage, setParpage] = useState(12)
+  let [perpage, setParpage] = useState(9)
   let [currentpage, setCurrentpage] = useState(1)
   let lastpage = perpage * currentpage
   let firstpage = lastpage - perpage
   let Allpage = info.slice(firstpage, lastpage)
   // 
-  let handeleListitem = () => {
-    console.log("ami");
-  }
-  let handeleListitemright = () => {
-    console.log("ami right");
-  }
+
+
   // page number calculation
   let pageNumber = []
   for (let i = 1; i < Math.ceil(info.length / perpage); i++) {
@@ -70,12 +68,23 @@ const Shop = () => {
     setFiltershow(catproduc)
   }
 
-  let [allproduct, setAllproduct] = useState([])
-  let handeleAllProduct = () => {
-    setAllproduct(!allproduct)
+  let [listitem, setListitem] = useState("")
+  let handeleListitem = () => {
+    setListitem("Active")
   }
-  return (
 
+  let [allproducticon, setAllproducticon] = useState([])
+  let handeleAllProduct = () => {
+    setAllproducticon(!allproducticon)
+  }
+
+  // catagory theke Allpage 
+  let handeleAllproducts = () => {
+    setFiltershow("")
+  }
+
+
+  return (
     <Container>
 
 
@@ -83,7 +92,6 @@ const Shop = () => {
         <div>
           <h2 className=' text-[#151875] text-[23px] font-bold '>Ecommerce Acceories & Fashion item </h2>
           <p className='text-[#8A8FB9] font-medium text-[16px]'>About 9,620 results (0.62 seconds)</p>
-          {/* <p> Per Page:Sort By:Best MatchView:About 9,620 results (0.62 seconds)</p> */}
         </div>
         <div className=' col-span-2'>
           <div className='grid grid-cols-3 items-center'>
@@ -92,6 +100,8 @@ const Shop = () => {
               <div>
                 <label className='px-2' pr-2 htmlFor="">Per Page:</label>
                 <select onChange={handelePageChange} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+
+                  <option value="9"> 9</option>
                   <option value="12"> 12</option>
                   <option value="20">20</option>
                   <option value="36">36</option>
@@ -103,9 +113,10 @@ const Shop = () => {
               </div>
             </div>
             <div>
-              <div>
+              <div className='flex justify-between'>
                 <label className='px-2' pr-2 htmlFor="">Sort By:</label>
-                <select onChange={handeleCatagory} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
+                <select onChange={handeleCatagory} name=" " id="" className='py-1  border-2 border-[#262626]'>
+                  <option onClick={handeleAllproducts}>All Produsct</option>
                   {catagory.map((item) => (
                     <option value={item}>{item}</option>
                   ))}
@@ -115,9 +126,11 @@ const Shop = () => {
             <div>
               <div className=' flex items-center'>
                 <div>  <p className=' '>View:</p></div>
-                <div className=' flex items-center justify-between  '>
-                  <MdOutlinePlaylistAddCheck onClick={handeleListitem} className='bg-amber-600 text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]' />
-                  {/* <FaList onClick={handeleListitemright} className='bg-amber-600 text-[25px] py-1 px-1 mr-1' /> */}
+                <div className=' flex items-center justify-between  ' onClick={handeleListitem} >
+                  <MdOutlinePlaylistAddCheck className='bg-amber-600 text-[25px] py-1 px-1  ml-3 w-[40px] h-[30px]' />
+                </div>
+                <div className=' flex items-center justify-between  ' onClick={() => setListitem("")}>
+                  <FaThList className='bg-amber-600 text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]' />
                 </div>
                 <div className=' border  border-b-gray-900'>
                   <input className='py-2 w-full' type="text" />
@@ -128,10 +141,11 @@ const Shop = () => {
         </div>
       </div>
 
+      <Products Allpage={Allpage} filtershow={filtershow} listitem={listitem} />
 
-      {allproduct ? <Products Allpage={Allpage} filtershow={filtershow} />
-        : <div> hello </div>}
 
+      {allproducticon ? ""
+        : <div> <FPage /> </div>}
 
       <div onClick={handeleAllProduct}><h2 className='text-[30px] font-bold px-4 cursor-pointer'>Show All</h2></div>
 
