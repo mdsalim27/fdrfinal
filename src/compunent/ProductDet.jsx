@@ -24,7 +24,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Container from './Container'
 import { CiHeart, CiStar } from 'react-icons/ci'
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowRight, FaFacebook, FaGithub, FaInstagramSquare, FaSearchPlus, FaTwitter } from 'react-icons/fa'
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowRight, FaFacebook, FaGithub, FaInstagramSquare, FaRegStar, FaSearchPlus, FaStar, FaStarHalf, FaTwitter } from 'react-icons/fa'
 import { ApiData } from './ContextApi'
 import Slider from 'react-slick'
 import { FaCartShopping, FaRegHeart } from 'react-icons/fa6'
@@ -73,6 +73,14 @@ const ProductDet = () => {
   useEffect(() => {
     getproductId()
   }, [])
+
+let clientRating = Array.from({length:5}, (_, index)=>{
+  let number =index + 0.5
+  return(
+    singleProduct.rating >index + 1 ? <FaStar/>  : singleProduct.rating > number ? <FaStarHalf/> : <FaRegStar/>
+  )
+})
+
   return (
 
     <section className='bg-[#F9F8FE] py-20'>
@@ -91,11 +99,14 @@ const ProductDet = () => {
                 <h2 className='py-5 font-bold text-[30px]'>Playwood arm chair</h2>
 
                 <div className='flex py-5 text-[35px] '>
+                  {/* <CiStar />
                   <CiStar />
                   <CiStar />
                   <CiStar />
-                  <CiStar />
-                  <CiStar />
+                  <CiStar /> */}
+                  {
+                   clientRating
+                  }
                 </div>
                 <div className='flex gap-10 py-2 text-[#151875] font-medium text-[20px]'>
                   <p>{singleProduct.price}</p><p>{singleProduct.price}</p>
