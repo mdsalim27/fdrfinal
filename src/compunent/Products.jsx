@@ -13,7 +13,7 @@ const Products = ({ Allpage, filtershow, listitem }) => {
   let [cateFilterShow, setCateFilterShow] = useState([])
 
   useEffect(() => {
-    let cateall = filtershow.slice(0, 6)
+    let cateall = filtershow.slice(0, 3)
     setCateFilterShow(cateall)
   }, [filtershow])
 
@@ -23,7 +23,7 @@ const Products = ({ Allpage, filtershow, listitem }) => {
     setShow(false)
   }
 let handdelLess =() =>{
-   let cateall = filtershow.slice(0, 6)
+   let cateall = filtershow.slice(0, 3)
     setCateFilterShow(cateall)
      setShow(true)
 }
@@ -90,11 +90,11 @@ let handdelLess =() =>{
               ))}
             </div>
  
-             {filtershow.length > 6 &&
+             {filtershow.length > 3 &&
                 show  ?
                 <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handelShow}>Show All</button>
                 // <h2 className=' cursor-pointer bg-[green] border border-[blue]' onClick={handelShow}>Show All</h2>
-               : filtershow.length > 6 &&
+               : filtershow.length > 3 &&
               //  <h2 className=' cursor-pointer' onClick={handdelLess}>Less</h2>
                <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handdelLess}>Less</button>
 
