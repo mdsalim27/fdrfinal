@@ -25,11 +25,19 @@ const Shop = () => {
   let firstpage = lastpage - perpage
   let Allpage = info.slice(firstpage, lastpage)
   // 
-
+ let [filtershow, setFiltershow] = useState([])
+  let handeleCatagory = (e) => {
+    let catproduct = e.target.value
+    let catproduc = info.filter((item) => item.category === catproduct)
+    setFiltershow(catproduc)
+  }
 
   // page number calculation
   let pageNumber = []
-  for (let i = 1; i < Math.ceil(info.length / perpage); i++) {
+  // for (let i = 1; i < Math.ceil(info.length / perpage); i++) {
+  //   pageNumber.push(i)
+  // }
+   for (let i = 1; i < Math.ceil(filtershow.length > 0 ? filtershow : info.length/perpage ); i++) {
     pageNumber.push(i)
   }
   // pagination click alada alada page asbe 1,2,3,.. indexing page asbe pagiantion theke pops kore shop a kaj 
@@ -61,12 +69,7 @@ const Shop = () => {
     setCatagory([...new Set(info.map((item) => item.category))])
   }, [info])
 
-  let [filtershow, setFiltershow] = useState([])
-  let handeleCatagory = (e) => {
-    let catproduct = e.target.value
-    let catproduc = info.filter((item) => item.category === catproduct)
-    setFiltershow(catproduc)
-  }
+ 
 
   let [listitem, setListitem] = useState("")
   let handeleListitem = () => {
@@ -123,20 +126,17 @@ const Shop = () => {
                 </select>
               </div>
             </div>
-            <div>
-              <div className=' flex items-center'>
-                <div>  <p className=' '>View:</p></div>
-                <div className=' flex items-center justify-between  ' onClick={handeleListitem} >
-                  <MdOutlinePlaylistAddCheck className='bg-amber-600 text-[25px] py-1 px-1  ml-3 w-[40px] h-[30px]' />
-                </div>
-                <div className=' flex items-center justify-between  ' onClick={() => setListitem("")}>
-                  <FaThList className='bg-amber-600 text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]' />
-                </div>
-                <div className=' border  border-b-gray-900'>
-                  <input className='py-2 w-full' type="text" />
-                </div>
+
+            <div className=' flex items-center  '  >
+              <div className=''>  <p className='ml-5 '>View:</p></div>
+              <div onClick={handeleListitem} className={`${listitem == "Active" ? 'flex justify-end bg-amber-600 text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]' : ' flex justify-end text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]'}`}>
+                <MdOutlinePlaylistAddCheck />
+              </div>
+              <div onClick={() => setListitem("")} className={`${listitem == "Active" ? 'flex justify-start  text-[25px] py-1 px-1  mr-10 ml-3 w-[40px] h-[30px]' : 'flex justify-start bg-amber-600 text-[25px] py-1 px-1 mr-10 ml-3 w-[40px] h-[30px]'}`}>
+                <FaThList />
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@ const Shop = () => {
       {allproducticon ? ""
         : <div> <FPage /> </div>}
 
-      <div onClick={handeleAllProduct}><h2 className='text-[30px] font-bold px-4 cursor-pointer'>Show All</h2></div>
+      {/* <div onClick={handeleAllProduct}><h2 className='text-[30px] font-bold px-4 cursor-pointer'>Show All</h2></div> */}
 
       <Pagination pageNumber={pageNumber} paginate={paginate} Next={Next} Prev={Prev}
         currentpage={currentpage} />
