@@ -4,7 +4,7 @@ import { ApiData } from './ContextApi'
 import { DiMagento } from 'react-icons/di'
 import { FaCartShopping, FaRegHeart } from 'react-icons/fa6'
 import Container from './Container'
-import Shop from './Shop'
+
 import { FaSearchPlus } from 'react-icons/fa'
 import { HiH1 } from 'react-icons/hi2'
 const Products = ({ Allpage, filtershow, listitem }) => {
@@ -92,11 +92,11 @@ let handdelLess =() =>{
  
              {filtershow.length > 6 &&
                 show  ?
-                <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 ' onClick={handelShow}>Show All</button>
+                <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handelShow}>Show All</button>
                 // <h2 className=' cursor-pointer bg-[green] border border-[blue]' onClick={handelShow}>Show All</h2>
                : filtershow.length > 6 &&
               //  <h2 className=' cursor-pointer' onClick={handdelLess}>Less</h2>
-               <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 ' onClick={handdelLess}>Less</button>
+               <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handdelLess}>Less</button>
 
               } 
           </div>
