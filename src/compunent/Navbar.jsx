@@ -11,10 +11,12 @@ const Navbar = () => {
   let [nave, setNave] = useState([])
   let handelNave = () => {
     console.log('ami');
-
-
-
   }
+let handleSerch =()=>{
+  console.log("ami");
+  
+}
+
   return (
     <div>
       <section className='mt-6'>
@@ -32,22 +34,21 @@ const Navbar = () => {
                 <li className='px-3'><a href="/contact">Contact</a></li>
               </ui>
             </div>
-            <div className='lg:w-2/6 flex items-center justify-end '>
-
-
-              <div className='bg-[#D9D9D9] h-[100%]'>
-                <input
-                 type="text"
-                 />
+            
+            <div className='lg:w-2/6 flex items-center justify-end  '>
+              <div className='bg-[#D9D9D9] h-[100%] cursor-alias'>
+                <input onChange={handleSerch}
+                      
+                className='py-3 px-3'
+                  type="text"
+                />
               </div>
-
-
-              <div className='bg-amber-800 h-[100%] px-2 '> <IoIosSearch className='mt-[50%] transition-x-[-50%]' /></div>
+              <div className='bg-amber-800 h-[100%] px-4 cursor-pointer'> <IoIosSearch className='mt-[50%] transition-y-[-50%]  text-[30px] hover:text-[#FFFF] ' /></div>
             </div>
 
           </div>
         </Container>
-       
+
       </section>
     </div>
   )
