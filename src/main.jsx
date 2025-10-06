@@ -5,9 +5,13 @@ import App from './App.jsx'
 import { ContextApi } from './compunent/ContextApi.jsx'
 
 import "slick-carousel/slick/slick.css";
+// import store from '../src/Store.js'
+import { Provider } from 'react-redux'
 
 createRoot(document.getElementById('root')).render(
-  <ContextApi>
-    <App />
-  </ContextApi>,
+  // <Provider store={store} >
+    <ContextApi>
+      <App />
+    </ContextApi>
+  // </Provider>
 )

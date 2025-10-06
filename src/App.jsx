@@ -16,6 +16,7 @@ import LoginPage from './compunent/LoginPage'
 import SignUpPage from './compunent/SignUpPage'
 import ForgotPasswordPagecode from './compunent/ForgotPasswordPagecode'
 import ForgotPasswordPage from './compunent/ForgotPasswordPage'
+import Cart from './compunent/Cart'
 
 
 let router = createBrowserRouter(createRoutesFromElements(
@@ -37,6 +38,7 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='/products' element={<Shop />}></Route>
     <Route path='/Blog' element={<Blog />}></Route>
     <Route path='/pages' element={<Page />}></Route>
+    <Route path='/cart' element={<Cart />}></Route>
   </Route>
 ))
 function App() {

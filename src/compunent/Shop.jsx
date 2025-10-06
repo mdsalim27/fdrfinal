@@ -172,15 +172,12 @@ const Shop = () => {
                 <option value="50-200">$49 - $200</option>
               </select>
             </div>
-
           </div>
         </div>
       </div>
       {/* onClick={() => handlePrice({ low: 0, high: 9 })} */}
 
-
       <Products Allpage={Allpage} filtershow={filtershow} listitem={listitem} />
-
       <Pagination pageNumber={pageNumber} paginate={paginate} Next={Next} Prev={Prev}
         currentpage={currentpage} />
     </Container>

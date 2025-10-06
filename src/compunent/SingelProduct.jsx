@@ -40,11 +40,10 @@ const SingelProduct = () => {
                             </div>
                         ))
                     }
-
                 </div>
                 <div className='bg-amber-500'>hi</div>
             </div>
-            {SingelProduct ={SingelProduct}}
+            {SingelProduct = { SingelProduct }}
         </Container>
     )
 }

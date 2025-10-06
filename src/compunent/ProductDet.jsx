@@ -21,13 +21,15 @@
 
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Container from './Container'
 import { CiHeart, CiStar } from 'react-icons/ci'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowRight, FaFacebook, FaGithub, FaInstagramSquare, FaRegStar, FaSearchPlus, FaStar, FaStarHalf, FaTwitter } from 'react-icons/fa'
 import { ApiData } from './ContextApi'
 import Slider from 'react-slick'
 import { FaCartShopping, FaRegHeart } from 'react-icons/fa6'
+  import { ToastContainer, toast } from 'react-toastify';
+
 
 function SampleNextArrow(props) {
   const { style, onClick } = props;
@@ -61,10 +63,12 @@ const ProductDet = () => {
     prevArrow: <SamplePrevArrow />,
   }
 
-  let info = useContext(ApiData)
+  // singalepage singaleproduct show
 
+  let info = useContext(ApiData)
   let [singleProduct, setSingleProduct] = useState([])
   let productId = useParams()
+
   let getproductId = () => {
     axios.get(`https://dummyjson.com/products/${productId.id}`).then((response) => {
       setSingleProduct(response.data)
@@ -74,13 +78,28 @@ const ProductDet = () => {
     getproductId()
   }, [])
 
-let clientRating = Array.from({length:5}, (_, index)=>{
-  let number =index + 0.5
-  return(
-    singleProduct.rating >index + 1 ? <FaStar/>  : singleProduct.rating > number ? <FaStarHalf/> : <FaRegStar/>
-  )
-})
+  // reviw star
 
+  let clientRating = Array.from({ length: 5 }, (_, index) => {
+    let number = index + 0.5
+    return (
+      singleProduct.rating > index + 1 ? <FaStar /> : singleProduct.rating > number ? <FaStarHalf /> : <FaRegStar />
+    )
+  })
+  // navigate click a time nibe kicho text asbe 
+  let navigate = useNavigate()
+  let handleCart = () => {
+    console.log("Ami");
+    toast("Wow so easy!");
+    setTimeout(()=>{
+      navigate("/cart")
+    },3000)
+  }
+
+  // discounte
+
+  let discount = (singleProduct.price * singleProduct.discountPercentage) / 100
+  let mainPrice = singleProduct.price - discount
   return (
 
     <section className='bg-[#F9F8FE] py-20'>
@@ -89,30 +108,26 @@ let clientRating = Array.from({length:5}, (_, index)=>{
           <div className=' grid grid-cols-2 py-5 px-30 my-20 shadow-2xl'>
             <div className=' relative'>
               <div><img src={singleProduct.thumbnail} alt="" /></div>
-              <div className=' absolute left-0 bottom-0 '>
-                <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
-                <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
-              </div>
+              {/* <Link to={"/cart"}> */}
+                <div className=' absolute left-0 bottom-0 '>
+                  <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
+                  <button onClick={handleCart} className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
+                   <ToastContainer />
+                </div>
+              {/* </Link> */}
             </div>
             <div>
               <div className=''>
                 <h2 className='py-5 font-bold text-[30px]'>Playwood arm chair</h2>
-
                 <div className='flex py-5 text-[35px] '>
-                  {/* <CiStar />
-                  <CiStar />
-                  <CiStar />
-                  <CiStar />
-                  <CiStar /> */}
                   {
-                   clientRating
+                    clientRating
                   }
                 </div>
                 <div className='flex gap-10 py-2 text-[#151875] font-medium text-[20px]'>
-                  <p>{singleProduct.price}</p><p>{singleProduct.price}</p>
-
+                  <p>{"$" + mainPrice.toFixed(2)}</p>
+                  <p className='line-through'>{"$" + singleProduct.price}</p>
                 </div>
-
                 <div><h2 className='py-2 text-[#151875] font-medium text-[20px]'>Color</h2></div>
                 <div><p className='py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.</p></div>
                 <div className='flex items-center justify-center gap-16 py-2 text-[#151875] font-medium text-[20px]'><h3 className='py-2'>Add To cart</h3><CiHeart /></div>
