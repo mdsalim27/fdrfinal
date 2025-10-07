@@ -28,7 +28,9 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowRight, FaFacebook, 
 import { ApiData } from './ContextApi'
 import Slider from 'react-slick'
 import { FaCartShopping, FaRegHeart } from 'react-icons/fa6'
-  import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux'
+import { addToCart } from './Slice/ProductSlice'
 
 
 function SampleNextArrow(props) {
@@ -87,17 +89,17 @@ const ProductDet = () => {
     )
   })
   // navigate click a time nibe kicho text asbe 
+  let dispach = useDispatch()
   let navigate = useNavigate()
-  let handleCart = () => {
-    console.log("Ami");
+  let handleCart = (item) => {
+    dispach(addToCart({...item, qun: 1}))
     toast("Wow so easy!");
-    setTimeout(()=>{
+    setTimeout(() => {
       navigate("/cart")
-    },3000)
+    }, 2000) 
   }
 
   // discounte
-
   let discount = (singleProduct.price * singleProduct.discountPercentage) / 100
   let mainPrice = singleProduct.price - discount
   return (
@@ -109,11 +111,11 @@ const ProductDet = () => {
             <div className=' relative'>
               <div><img src={singleProduct.thumbnail} alt="" /></div>
               {/* <Link to={"/cart"}> */}
-                <div className=' absolute left-0 bottom-0 '>
-                  <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
-                  <button onClick={handleCart} className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
-                   <ToastContainer />
-                </div>
+              <div className=' absolute left-0 bottom-0 '>
+                <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
+                <button onClick={()=>handleCart(singleProduct)} className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
+                <ToastContainer />
+              </div>
               {/* </Link> */}
             </div>
             <div>
