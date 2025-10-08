@@ -16,11 +16,13 @@ import ForgotPasswordPagecode from '../compunent/ForgotPasswordPagecode'
 import SingelProduct from '../compunent/SingelProduct'
 import Products from '../compunent/Products'
 import FPage from '../compunent/FPage'
+import Checkout from '../compunent/Checkout'
 
 const Home = () => {
   return (
     <div>
       {/* <FPage /> */}
+      {/* <Checkout/> */}
       <Banner />
       <Product />
       {/* <SingelProduct/> */}

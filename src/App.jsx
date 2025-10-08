@@ -17,6 +17,8 @@ import SignUpPage from './compunent/SignUpPage'
 import ForgotPasswordPagecode from './compunent/ForgotPasswordPagecode'
 import ForgotPasswordPage from './compunent/ForgotPasswordPage'
 import Cart from './compunent/Cart'
+import Checkout from './compunent/Checkout'
+import OrderSuccess from './compunent/Slice/OrderSuccess'
 
 
 let router = createBrowserRouter(createRoutesFromElements(
@@ -39,7 +41,10 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='/Blog' element={<Blog />}></Route>
     <Route path='/pages' element={<Page />}></Route>
     <Route path='/cart' element={<Cart />}></Route>
-  </Route>
+    <Route path='/checkout' element={<Checkout />}></Route>
+    <Route path='/order-success' element={<OrderSuccess />}></Route>
+    
+</Route>
 ))
 function App() {
   return (
