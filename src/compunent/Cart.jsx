@@ -74,6 +74,9 @@
 // // // // // export default Cart
 
 
+
+
+
 // // // // import React from 'react'
 // // // // import Container from './Container'
 // // // // import { useDispatch, useSelector } from 'react-redux'
@@ -730,6 +733,154 @@
 // export default Cart
 
 
+// import React from 'react'
+// import Container from './Container'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { increment, decrement, removeFromCart } from './Slice/ProductSlice'
+// import { Link } from 'react-router-dom'
+
+// const Cart = () => {
+//   const data = useSelector((state) => state.Product.cartItem)
+//   const dispatch = useDispatch()
+
+//   // 🧮 মোট দাম হিসাব করো
+//   const subtotal = data.reduce((total, item) => total + item.price * item.qun, 0)
+
+//   return (
+//     <Container>
+//       <section className="bg-white dark:bg-gray-900 py-16">
+//         <div className="mx-auto max-w-screen-xl px-4">
+//           {/* ✅ যদি কার্ট খালি থাকে */}
+//           {data.length === 0 ? (
+//             <div className="flex flex-col items-center justify-center w-full py-20">
+//               <img
+//                 src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png"
+//                 alt="Empty Cart"
+//                 className="w-32 mb-6 opacity-80"
+//               />
+//               <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
+//                 Your cart is empty 🛒
+//               </h2>
+//               <p className="text-gray-500 mt-2 mb-6">
+//                 Add some products to get started!
+//               </p>
+
+//               {/* 🛍️ Go to Shop Button */}
+//               <Link
+//                 to="/shop"
+//                 className="inline-block px-6 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
+//               >
+//                 Go to Shop
+//               </Link>
+//             </div>
+//           ) : (
+//             <div className="flex flex-col lg:flex-row gap-8">
+//               {/* 🛍️ Cart Items */}
+//               <div className="flex-1 space-y-6">
+//                 {data.map((item) => (
+//                   <div
+//                     key={item.id}
+//                     className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+//                   >
+//                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+//                       <div className="flex items-center gap-4">
+//                         <img
+//                           src={item.thumbnail}
+//                           alt={item.title}
+//                           className="w-20 h-20 rounded-md object-cover"
+//                         />
+//                         <div>
+//                           <p className="font-semibold text-gray-900 dark:text-white">
+//                             {item.title}
+//                           </p>
+//                           <p className="text-sm text-gray-500 dark:text-gray-400">
+//                             ${item.price.toFixed(2)} each
+//                           </p>
+//                         </div>
+//                       </div>
+
+//                       {/* Quantity Controls */}
+//                       <div className="flex items-center gap-2">
+//                         <button
+//                           onClick={() => dispatch(decrement(item.id))}
+//                           className="inline-flex h-6 w-6 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200"
+//                         >
+//                           -
+//                         </button>
+//                         <input
+//                           type="text"
+//                           readOnly
+//                           value={item.qun}
+//                           className="w-10 text-center bg-transparent border-0 text-gray-900 font-medium"
+//                         />
+//                         <button
+//                           onClick={() => dispatch(increment(item.id))}
+//                           className="inline-flex h-6 w-6 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200"
+//                         >
+//                           +
+//                         </button>
+//                       </div>
+
+//                       {/* Price */}
+//                       <div className="text-end">
+//                         <p className="text-base font-bold text-gray-900 dark:text-white">
+//                           ${(item.price * item.qun).toFixed(2)}
+//                         </p>
+//                       </div>
+
+//                       {/* ❌ Remove Button */}
+//                       <button
+//                         onClick={() => dispatch(removeFromCart(item.id))}
+//                         className="text-sm font-medium text-red-600 hover:underline"
+//                       >
+//                         Remove
+//                       </button>
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+
+//               {/* 💰 Cart Total Section */}
+//               <div className="w-full lg:w-1/3 bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md h-fit">
+//                 <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+//                   Cart Total
+//                 </h2>
+
+//                 <div className="flex justify-between mb-2 text-gray-700 dark:text-gray-300">
+//                   <span>Subtotal:</span>
+//                   <span>${subtotal.toFixed(2)}</span>
+//                 </div>
+
+//                 <div className="flex justify-between mb-4 text-gray-700 dark:text-gray-300">
+//                   <span>Shipping:</span>
+//                   <span className="font-medium">Free</span>
+//                 </div>
+
+//                 <hr className="my-3 border-gray-300 dark:border-gray-700" />
+
+//                 <div className="flex justify-between text-lg font-bold text-gray-900 dark:text-white mb-6">
+//                   <span>Total:</span>
+//                   <span>${subtotal.toFixed(2)}</span>
+//                 </div>
+
+//                 <Link
+//                   to="/checkout"
+//                   className="w-full inline-block text-center px-6 py-3 rounded-lg bg-green-600 text-white font-medium hover:bg-green-700 transition"
+//                 >
+//                   Proceed to Checkout
+//                 </Link>
+//               </div>
+//             </div>
+//           )}
+//         </div>
+//       </section>
+//     </Container>
+//   )
+// }
+
+// export default Cart
+
+
 import React from 'react'
 import Container from './Container'
 import { useDispatch, useSelector } from 'react-redux'
@@ -740,8 +891,11 @@ const Cart = () => {
   const data = useSelector((state) => state.Product.cartItem)
   const dispatch = useDispatch()
 
-  // 🧮 মোট দাম হিসাব করো
-  const subtotal = data.reduce((total, item) => total + item.price * item.qun, 0)
+  // 🧮 মোট দাম হিসাব করো (safe calculation)
+  const subtotal = data.reduce(
+    (total, item) => total + (item.price ? item.price * item.qun : 0),
+    0
+  )
 
   return (
     <Container>
@@ -750,11 +904,8 @@ const Cart = () => {
           {/* ✅ যদি কার্ট খালি থাকে */}
           {data.length === 0 ? (
             <div className="flex flex-col items-center justify-center w-full py-20">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png"
-                alt="Empty Cart"
-                className="w-32 mb-6 opacity-80"
-              />
+              <img src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png"
+                alt="Empty Cart" className="w-32 mb-6 opacity-80" />
               <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
                 Your cart is empty 🛒
               </h2>
@@ -791,11 +942,10 @@ const Cart = () => {
                             {item.title}
                           </p>
                           <p className="text-sm text-gray-500 dark:text-gray-400">
-                            ${item.price.toFixed(2)} each
+                            ${item.price ? item.price.toFixed(2) : '0.00'} each
                           </p>
                         </div>
                       </div>
-
                       {/* Quantity Controls */}
                       <div className="flex items-center gap-2">
                         <button
@@ -817,14 +967,15 @@ const Cart = () => {
                           +
                         </button>
                       </div>
-
                       {/* Price */}
                       <div className="text-end">
                         <p className="text-base font-bold text-gray-900 dark:text-white">
-                          ${(item.price * item.qun).toFixed(2)}
+                          $
+                          {item.price && item.qun
+                            ? (item.price * item.qun).toFixed(2)
+                            : '0.00'}
                         </p>
                       </div>
-
                       {/* ❌ Remove Button */}
                       <button
                         onClick={() => dispatch(removeFromCart(item.id))}
@@ -836,30 +987,24 @@ const Cart = () => {
                   </div>
                 ))}
               </div>
-
               {/* 💰 Cart Total Section */}
               <div className="w-full lg:w-1/3 bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md h-fit">
                 <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
                   Cart Total
                 </h2>
-
                 <div className="flex justify-between mb-2 text-gray-700 dark:text-gray-300">
                   <span>Subtotal:</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>${subtotal ? subtotal.toFixed(2) : '0.00'}</span>
                 </div>
-
                 <div className="flex justify-between mb-4 text-gray-700 dark:text-gray-300">
                   <span>Shipping:</span>
                   <span className="font-medium">Free</span>
                 </div>
-
                 <hr className="my-3 border-gray-300 dark:border-gray-700" />
-
                 <div className="flex justify-between text-lg font-bold text-gray-900 dark:text-white mb-6">
                   <span>Total:</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>${subtotal ? subtotal.toFixed(2) : '0.00'}</span>
                 </div>
-
                 <Link
                   to="/checkout"
                   className="w-full inline-block text-center px-6 py-3 rounded-lg bg-green-600 text-white font-medium hover:bg-green-700 transition"
@@ -876,3 +1021,4 @@ const Cart = () => {
 }
 
 export default Cart
+
