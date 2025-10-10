@@ -93,7 +93,7 @@ const ProductDet = () => {
   let navigate = useNavigate()
   let handleCart = (item) => {
     dispach(addToCart({...item, qun: 1}))
-    toast("Wow so easy!");
+    toast("successfully added to cart");
     setTimeout(() => {
       navigate("/cart")
     }, 2000) 
@@ -112,8 +112,11 @@ const ProductDet = () => {
               <div><img src={singleProduct.thumbnail} alt="" /></div>
               {/* <Link to={"/cart"}> */}
               <div className=' absolute left-0 bottom-0 '>
-                <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
-                <button onClick={()=>handleCart(singleProduct)} className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
+                <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 
+                hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
+                <button onClick={()=>handleCart(singleProduct)} className='bg-green-200 text-[blue]
+                 px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black 
+                 hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
                 <ToastContainer />
               </div>
               {/* </Link> */}

@@ -58,14 +58,17 @@ const Menu = () => {
                                 </div>
                             </div>
                             {/* <div className='ml-4 '><CiShoppingCart className='' /></div> */}
-                            <div className='ml-4 '>
-                                <div className='relative'>
-                                    <CiShoppingCart className='' />
+                            <Link to={"/cart"}>
+                                <div className='  relative '>
+                                    <div className=' absolute z-10'>
+                                        {data.length}
+                                    </div>
+                                    <div className=''>
+                                        <CiShoppingCart className='w-full'/>
+                                    </div>
+
                                 </div>
-                                <div className=' absolute'>
-                                    {data.length}
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -43,6 +43,7 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='/cart' element={<Cart />}></Route>
     <Route path='/checkout' element={<Checkout />}></Route>
     <Route path='/order-success' element={<OrderSuccess />}></Route>
+    <Route path='/cart' element={<Cart />}></Route>
     
 </Route>
 ))
