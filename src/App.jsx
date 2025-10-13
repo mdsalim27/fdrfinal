@@ -20,6 +20,8 @@ import Cart from './compunent/Cart'
 import Checkout from './compunent/Checkout'
 import OrderSuccess from './compunent/Slice/OrderSuccess'
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<RootLayout />}>

@@ -9,45 +9,46 @@ const Footer = () => {
         <section className='bg-[#EEEFFB]'>
             <Container>
                 <div className=' '>
-                    <div className='flex justify-between'>
+                    <div className='lg:flex lg:justify-between justify-between'>
                         <div className='py-14'>
-                            <div><img src={logo} alt="" /></div>
+                            <div className='flex justify-center'><img src={logo} alt="" /></div>
                             <div className='mt-10 '>
-                                <div className='flex'>
+                                <div className='lg:flex flex justify-center'>
                                     <div> <input className=' border-1 py-3 px-5' type="text" /> </div>
                                     <Link to={"/signuppage"}>
-                                    <div ><button className='bg-[#FB2E86] py-3 px-5'>Sign Up</button></div>
+                                        <div ><button className='bg-[#FB2E86] py-3 px-5'>Sign Up</button></div>
                                     </Link>
 
                                 </div>
-                                <div><p className='mt-6 font-black'>Contact Info</p>
+                                <div className='text-center lg:text-start'>
+                                    <p className='mt-6 font-black'>Contact Info</p>
                                     <p className=' font-black'>17 Princess Road, London, Greater London NW1 8JR, UK</p>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div className='py-14 cursor-pointer'>
-                                <h2 className='font-bold pb-2 text-[22px]'>Catagories</h2>
+                        <div className='lg:flex gap-5 '>
+                            <div className='lg:py-14 text-center  cursor-pointer'>
+                                <h2 className='lg:font-bold font-bold pb-2 lg:text-[22px] text-[33px]'>Catagories</h2>
                                 <p className='py-2 text-[#8A8FB9]'>Laptops & Computers</p>
                                 <p className='py-2 text-[#8A8FB9]'>Cameras & Photography</p>
                                 <p className='py-2 text-[#8A8FB9]'>Smart Phones & Tablets</p>
                                 <p className='py-2 text-[#8A8FB9]'>Video Games & Consoles</p>
                                 <p className='py-2 text-[#8A8FB9]'>Waterproof Headphones</p>
                             </div>
-                        </div>
-                        <div>
-                             <div className='py-14 cursor-pointer'>
-                                <h2 className='font-bold pb-2 text-[22px]'>Customer Care</h2>
+
+
+                            <div className='lg:py-14 text-center py-6  cursor-pointer'>
+                                <h2 className='lg:font-bold font-bold pb-2 lg:text-[22px] text-[33px]'>Customer Care</h2>
                                 <p className='py-2 text-[#8A8FB9]'>My Account</p>
                                 <p className='py-2 text-[#8A8FB9]'>Discount</p>
                                 <p className='py-2 text-[#8A8FB9]'>Returns</p>
                                 <p className='py-2 text-[#8A8FB9]'>Orders History</p>
                                 <p className='py-2 text-[#8A8FB9]'>Order Tracking</p>
                             </div>
-                        </div>
-                        <div>
-                             <div className='py-14 cursor-pointer'>
-                                <h2 className='font-bold pb-2 text-[22px]'>Pages</h2>
+
+
+                            <div className='lg:py-14 text-center py-5 cursor-pointer'>
+                                <h2 className='lg:font-bold font-bold pb-2 lg:text-[22px] text-[33px]'>Pages</h2>
                                 <p className='py-2 text-[#8A8FB9]'>Blog</p>
                                 <p className='py-2 text-[#8A8FB9]'>Browse the Shop</p>
                                 <p className='py-2 text-[#8A8FB9]'>Category</p>
@@ -66,7 +67,7 @@ const Footer = () => {
             <Container>
                 <div className=' flex items-center py-6 justify-around'>
                     <div><p>©Webecy - All Rights Reserved</p></div>
-                    <div className='flex items-center gap-12'>
+                    <div className='flex items-center lg:gap-12 gap-4'>
                         <div><IoLogoFacebook /></div>
                         <div><FaInstagram /></div>
                         <div><FaTwitter /></div>

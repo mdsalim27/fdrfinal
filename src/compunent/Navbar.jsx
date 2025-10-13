@@ -1,57 +1,303 @@
+// import React, { useState } from 'react'
+// import Container from './Container'
+// import Logo from '../assets/logo.png'
+// import { IoIosSearch } from 'react-icons/io'
+// import { FaBars } from 'react-icons/fa'
+
+
+// const Navbar = () => {
+
+
+//   let [nave, setNave] = useState([])
+//   let handelNave = () => {
+//     console.log('ami');
+//   }
+
+//   let handleSearch = (e) => {
+//      console.log('Search value:', e.target.value)
+//   }
+
+//   return (
+//     <div>
+//       <section className='mt-6'>
+//         <Container>
+//           <div className='lg:flex items-center'>
+//             <div className='lg:w-1/6  flex justify-between px-5 lg:px-0 lg:items-center items-center'><img src={Logo} alt="" />
+//               < FaBars onClick={handelNave} className='cursor-pointer lg:opacity-0 ' /> </div>
+
+//             <div className='lg:w-3/6'>
+//               <ui className="lg:flex list-none" >
+//                 <li className='px-3'><a href="/">home </a></li>
+//                 <li className='px-3'><a href="/pages">Pages</a></li>
+//                 <li className='px-3'><a href="/products">Products</a></li>
+//                 <li className='px-3'><a href="/blog">Blog </a></li>
+//                 <li className='px-3'><a href="/shop">Shop</a></li>
+//                 <li className='px-3'><a href="/contact">Contact</a></li>
+//               </ui>
+//             </div>
+
+//             <div className='lg:w-2/6 flex items-center justify-end  '>
+//               <div className='bg-[#D9D9D9] h-[100%] cursor-alias'>
+//                 <input  onChange={handleSearch} className='py-3 px-3 '
+//                   type="text" />
+//               </div>
+//               <div className='bg-amber-800 h-[100%] px-4 cursor-pointer'> <IoIosSearch className='mt-[50%]
+//                transition-y-[-50%]  text-[30px] hover:text-[#FFFF] ' /></div>
+//             </div>
+
+//           </div>
+//         </Container>
+
+//       </section>
+//     </div>
+//   )
+// }
+
+// export default Navbar
+
+
+
+
+// import React, { useState } from 'react'
+// import Container from './Container'
+// import Logo from '../assets/logo.png'
+// import { IoIosSearch } from 'react-icons/io'
+// import { FaBars, FaTimes } from 'react-icons/fa'
+
+// const Navbar = () => {
+//   const [menuOpen, setMenuOpen] = useState(false)
+//   const [searchTerm, setSearchTerm] = useState('')
+//   const [showSuggestions, setShowSuggestions] = useState(false)
+
+//   // 🧺 Dummy product list (তুমি চাইলে API data বসাতে পারো)
+//   const products = [
+//     'iPhone 17 Pro Max',
+//     'Samsung Galaxy S24',
+//     'MacBook Air M3',
+//     'Sony Headphones',
+//     'Asus Gaming Laptop',
+//     'Apple Watch Ultra',
+//     'Bluetooth Speaker',
+//   ]
+
+//   // 🔍 Filter product suggestions
+//   const filteredProducts = products.filter((item) =>
+//     item.toLowerCase().includes(searchTerm.toLowerCase())
+//   )
+//   return (
+//     <nav className='shadow-md relative z-50'>
+//       <section className='mt-4'>
+//         <Container>
+//           <div className='flex items-center justify-between'>
+//             {/* Logo */}
+//             <div className='flex items-center gap-2'>
+//               <img src={Logo} alt="Logo" className='w-24' />
+//             </div>
+
+//             {/* Desktop Menu */}
+//             <ul className='hidden lg:flex list-none gap-6 font-medium'>
+//               <li><a href="/" className='hover:text-amber-700'>Home</a></li>
+//               <li><a href="/pages" className='hover:text-amber-700'>Pages</a></li>
+//               <li><a href="/products" className='hover:text-amber-700'>Products</a></li>
+//               <li><a href="/blog" className='hover:text-amber-700'>Blog</a></li>
+//               <li><a href="/shop" className='hover:text-amber-700'>Shop</a></li>
+//               <li><a href="/contact" className='hover:text-amber-700'>Contact</a></li>
+//             </ul>
+
+//             {/* Search + Icon */}
+//             <div className='flex items-center gap-1 relative'>
+//               <div className='bg-[#D9D9D9] flex items-center rounded-md overflow-hidden'>
+//                 <input
+//                   onFocus={() => setShowSuggestions(true)}
+//                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+//                   onChange={(e) => setSearchTerm(e.target.value)}
+//                   className='py-2 px-3 outline-none bg-transparent w-40 sm:w-60'
+//                   type="text"
+//                   placeholder="Search product..."
+//                 />
+//                 <div className='bg-amber-700 p-2 cursor-pointer'>
+//                   <IoIosSearch className='text-[24px] text-white' />
+//                 </div>
+//               </div>
+
+//               {/* 🔽 Search Suggestions */}
+//               {showSuggestions && searchTerm && (
+//                 <div className='absolute top-12 right-0 bg-white shadow-lg border w-60 rounded-md overflow-hidden'>
+//                   {filteredProducts.length > 0 ? (
+//                     filteredProducts.map((item, index) => (
+//                       <div
+//                         key={index}
+//                         className='px-4 py-2 hover:bg-amber-100 cursor-pointer'
+//                       >
+//                         {item}
+//                       </div>
+//                     ))
+//                   ) : (
+//                     <p className='px-4 py-2 text-gray-500'>No product found</p>
+//                   )}
+//                 </div>
+//               )}
+//             </div>
+
+//             {/* Mobile Icon */}
+//             <div className='lg:hidden text-2xl cursor-pointer' onClick={() => setMenuOpen(!menuOpen)}>
+//               {menuOpen ? <FaTimes /> : <FaBars />}
+//             </div>
+//           </div>
+//         </Container>
+//       </section>
+
+//       {/* 🧭 Mobile Menu (Slide In) */}
+//       <div
+//         className={`fixed top-0 left-0 h-full w-[70%] bg-white shadow-lg transform transition-transform duration-500 ease-in-out 
+//         ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+//       >
+//         <div className='p-5 flex justify-between items-center border-b'>
+//           <img src={Logo} alt="Logo" className='w-24' />
+//           <FaTimes className='text-xl cursor-pointer' onClick={() => setMenuOpen(false)} />
+//         </div>
+
+//         <ul className='flex flex-col gap-4 p-5 font-medium'>
+//           <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
+//           <li><a href="/pages" onClick={() => setMenuOpen(false)}>Pages</a></li>
+//           <li><a href="/products" onClick={() => setMenuOpen(false)}>Products</a></li>
+//           <li><a href="/blog" onClick={() => setMenuOpen(false)}>Blog</a></li>
+//           <li><a href="/shop" onClick={() => setMenuOpen(false)}>Shop</a></li>
+//           <li><a href="/contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+//         </ul>
+//       </div>
+//     </nav>
+//   )
+// }
+
+// export default Navbar
+
 import React, { useState } from 'react'
 import Container from './Container'
 import Logo from '../assets/logo.png'
 import { IoIosSearch } from 'react-icons/io'
-import { FaBars } from 'react-icons/fa'
-
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [showSuggestions, setShowSuggestions] = useState(false)
 
+  const products = [
+    'iPhone 17 Pro Max',
+    'Samsung Galaxy S24',
+    'MacBook Air M3',
+    'Sony Headphones',
+    'Asus Gaming Laptop',
+    'Apple Watch Ultra',
+    'Bluetooth Speaker',
+  ]
 
-  let [nave, setNave] = useState([])
-  let handelNave = () => {
-    console.log('ami');
-  }
-let handleSerch =()=>{
-  console.log("ami");
-  
-}
+  const filteredProducts = products.filter((item) =>
+    item.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   return (
-    <div>
-      <section className='mt-6'>
+    <nav className='shadow-md relative z-50 bg-white'>
+      <section className='py-3 md:py-4'>
         <Container>
-          <div className='lg:flex'>
-            <div className='lg:w-1/6  flex justify-between px-5 lg:px-0 lg:items-center items-center'><img src={Logo} alt="" /> < FaBars onClick={handelNave} className='cursor-pointer lg:opacity-0 ' /> </div>
+          <div className='flex items-center justify-between gap-3'>
 
-            <div className='lg:w-3/6'>
-              <ui className="lg:flex list-none" >
-                <li className='px-3'><a href="/">home </a></li>
-                <li className='px-3'><a href="/pages">Pages</a></li>
-                <li className='px-3'><a href="/products">Products</a></li>
-                <li className='px-3'><a href="/blog">Blog </a></li>
-                <li className='px-3'><a href="/shop">Shop</a></li>
-                <li className='px-3'><a href="/contact">Contact</a></li>
-              </ui>
+            {/* Logo */}
+            <div className='flex items-center gap-2'>
+              <img src={Logo} alt="Logo" className='w-16 sm:w-20 md:w-24' />
             </div>
-            
-            <div className='lg:w-2/6 flex items-center justify-end  '>
-              <div className='bg-[#D9D9D9] h-[100%] cursor-alias'>
-                <input onChange={handleSerch}
-                      
-                className='py-3 px-3'
+
+            {/* Desktop Menu */}
+            <ul className='hidden lg:flex list-none gap-4 xl:gap-6 font-medium text-gray-700 text-sm md:text-base'>
+              <li><a href="/" className='hover:text-amber-700 transition'>Home</a></li>
+              <li><a href="/pages" className='hover:text-amber-700 transition'>Pages</a></li>
+              <li><a href="/products" className='hover:text-amber-700 transition'>Products</a></li>
+              <li><a href="/blog" className='hover:text-amber-700 transition'>Blog</a></li>
+              <li><a href="/shop" className='hover:text-amber-700 transition'>Shop</a></li>
+              <li><a href="/contact" className='hover:text-amber-700 transition'>Contact</a></li>
+            </ul>
+
+            {/* Search (Desktop only) */}
+            <div className='hidden md:flex items-center gap-1 relative'>
+              <div className='bg-gray-200 flex items-center rounded-md overflow-hidden'>
+                <input
+                  onFocus={() => setShowSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className='py-2 px-3 outline-none bg-transparent w-40 md:w-56 lg:w-72 text-sm md:text-base'
                   type="text"
+                  placeholder="Search product..."
                 />
+                <div className='bg-amber-700 p-2 cursor-pointer hover:bg-amber-800 transition'>
+                  <IoIosSearch className='text-[20px] md:text-[22px] text-white' />
+                </div>
               </div>
-              <div className='bg-amber-800 h-[100%] px-4 cursor-pointer'> <IoIosSearch className='mt-[50%] transition-y-[-50%]  text-[30px] hover:text-[#FFFF] ' /></div>
+
+              {/* Search Suggestions */}
+              {showSuggestions && searchTerm && (
+                <div className='absolute top-12 right-0 bg-white shadow-lg border w-52 sm:w-64 md:w-72 rounded-md overflow-hidden z-50'>
+                  {filteredProducts.length > 0 ? (
+                    filteredProducts.map((item, index) => (
+                      <div
+                        key={index}
+                        className='px-4 py-2 hover:bg-amber-100 cursor-pointer text-sm md:text-base'
+                      >
+                        {item}
+                      </div>
+                    ))
+                  ) : (
+                    <p className='px-4 py-2 text-gray-500 text-sm md:text-base'>No product found</p>
+                  )}
+                </div>
+              )}
             </div>
 
+            {/* Mobile Menu Icon */}
+            <div
+              className='lg:hidden text-2xl cursor-pointer p-2 rounded-md hover:bg-gray-100 transition'
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </div>
           </div>
         </Container>
-
       </section>
-    </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[50%] sm:w-[50%] md:w-[50%] bg-white shadow-lg transform transition-transform duration-500 ease-in-out z-50
+        ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className='p-4 flex justify-between items-center border-b'>
+          <img src={Logo} alt="Logo" className='w-20 sm:w-24' />
+          <FaTimes className='text-xl cursor-pointer' onClick={() => setMenuOpen(false)} />
+        </div>
+
+        <ul className='flex flex-col gap-4 p-5 font-medium text-gray-700 text-sm sm:text-base'>
+          <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
+          <li><a href="/pages" onClick={() => setMenuOpen(false)}>Pages</a></li>
+          <li><a href="/products" onClick={() => setMenuOpen(false)}>Products</a></li>
+          <li><a href="/blog" onClick={() => setMenuOpen(false)}>Blog</a></li>
+          <li><a href="/shop" onClick={() => setMenuOpen(false)}>Shop</a></li>
+          <li><a href="/contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+        </ul>
+      </div>
+
+      {/* Overlay (background dim effect) */}
+      {menuOpen && (
+        <div
+          className='fixed inset-0 bg-black bg-opacity-40 z-40'
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+    </nav>
   )
 }
 
 export default Navbar
+
+
+
+
+

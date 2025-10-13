@@ -21,20 +21,16 @@ import Checkout from '../compunent/Checkout'
 const Home = () => {
   return (
     <div>
-      {/* <FPage /> */}
-      {/* <Checkout/> */}
-      <Banner />
-      <Product />
-      {/* <SingelProduct/> */}
-      <LeatestProducts />
+         <Banner />
+    <Product />
+      {/*  <LeatestProducts />
       <Support />
       <BanAdd />
       <TrendingProducts />
       <DiscountItem />
       <TopCategories />
       <GetLeates />
-      <LeatestBlogg />
-      {/* <Pagination /> */}
+      <LeatestBlogg />   */}
     </div>
   )
 }

@@ -12,40 +12,70 @@ import { Link } from 'react-router-dom'
 function SampleNextArrow(props) {
     const { style, onClick } = props;
     return (
-        <div className='lg:w-[35px] w-[30px] lg:h-[35px] h-[30px] border-none rounded-full flex justify-center 
-        items-center bg-[blue] absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
+        <div className=' 
+         absolute top-[50%] translate-y-[-50%] right-0 z-[1] hidden lg:block' onClick={onClick}
         >
-            <FaArrowAltCircleRight className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer' />
+            <FaArrowAltCircleRight className='lg:w-[30px]  w-[20px] lg:h-[30px] h-[20px] cursor-pointer' />
         </div>
     );
 }
 function SamplePrevArrow(props) {
     const { style, onClick } = props;
     return (
-        <div className='lg:w-[35px] w-[35px] lg:h-[35px] h-[50px]  border-none rounded-full flex  justify-center
-         items-center bg-[blue] absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
+        <div className=' 
+         absolute top-[50%] translate-y-[-50%] left-0 z-[1] hidden lg:block' onClick={onClick}>
             <FaArrowAltCircleLeft className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer ' />
         </div>
     );
 }
 
-
-
 const Product = () => {
     //     let { info, loading } = useContext(ApiData);
     // if (loading) return <p className='font-extralight text-[80px] text-[blue] text-center '>Loading...</p>;
 
+
+
+
+
     let info = useContext(ApiData)
     let [allproduct, setAllproduct] = useState([])
-    var settings = {
+    const settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToShow: 3, // Default (desktop)
+        slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
+
+
+        responsive: [
+            {
+                breakpoint: 1024, // lg (≤1024px)
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768, // md (≤768px)
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false, // optional: hide arrows on smaller screens
+                },
+            },
+            {
+                breakpoint: 480, // sm (≤480px)
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false, // optional
+                },
+            },
+        ],
     }
+
     let handeleallProduct = () => {
 
     }

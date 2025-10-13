@@ -309,3 +309,5 @@ const LeatestProducts = () => {
 }
 
 export default LeatestProducts
+
+
