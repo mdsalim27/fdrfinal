@@ -1,6 +1,5 @@
 import React from 'react'
-import Menu from '../compunent/Menu'
-import Navbar from '../compunent/Navbar'
+
 import Banner from '../compunent/Banner'
 import Product from '../compunent/Product'
 import LeatestProducts from '../compunent/LeatestProducts'
@@ -11,12 +10,7 @@ import DiscountItem from '../compunent/DiscountItem'
 import TopCategories from '../compunent/TopCategories'
 import GetLeates from '../compunent/GetLeates'
 import LeatestBlogg from '../compunent/LeatestBlogg'
-import ForgotPasswordPage from '../compunent/ForgotPasswordPage'
-import ForgotPasswordPagecode from '../compunent/ForgotPasswordPagecode'
-import SingelProduct from '../compunent/SingelProduct'
-import Products from '../compunent/Products'
-import FPage from '../compunent/FPage'
-import Checkout from '../compunent/Checkout'
+
 
 const Home = () => {
   return (
