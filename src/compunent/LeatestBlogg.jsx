@@ -20,8 +20,8 @@ const LeatestBlogg = () => {
         <Container>
             <div className='py-9 cursor-pointer'>
                 <div><h2 className='font-extrabold text-[#151875] text-[30px] text-center'>Leatest Blog</h2></div>
-                <div className='flex'>
-                    <div className='w-[33%] my-10 shadow-2xl'>
+                <div className='lg:flex'>
+                    <div className='lg:w-[33%] w-full my-10 shadow-2xl'>
                         <div className='flex justify-center pt-4'><img className='' src={Freem} alt="" /></div>
                         <div className='flex items-center justify-between px-6 py-4'>
                             <div className='flex items-center'>
@@ -42,7 +42,7 @@ const LeatestBlogg = () => {
                             }
                         </div>
                     </div>
-                    <div className='w-[33%] my-10 shadow-2xl'>
+                    <div className='lg:w-[33%] w-full my-10 shadow-2xl'>
                         <div className='flex justify-center pt-4'><img className='' src={Freem} alt="" /></div>
                         <div className='flex items-center justify-between px-6 py-4'>
                             <div className='flex items-center'>
@@ -63,7 +63,7 @@ const LeatestBlogg = () => {
                             }
                         </div>
                     </div>
-                    <div className='w-[33%] my-10 shadow-2xl'>
+                    <div className='lg:w-[33%] w-full my-10 shadow-2xl'>
                         <div className='flex justify-center pt-4'><img className='' src={Freem} alt="" /></div>
                         <div className='flex items-center justify-between px-6 py-4'>
                             <div className='flex items-center'>

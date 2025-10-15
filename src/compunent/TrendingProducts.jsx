@@ -11,46 +11,52 @@ const TrendingProducts = () => {
     return (
         <Container>
 
-             <div className=' my-5 bg-[#F5F6F8] cursor-pointer '>
+            <div className=' my-5 bg-[#F5F6F8] cursor-pointer '>
                 <div>
                     <h2 className='text-[#151875] text-center text-[30px] font-extrabold py-8'>Trending Products</h2>
                 </div>
-                <div className='flex justify-between  py-3 '>
-                    <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
-                        <div><img src={Trending} alt="" />
-                            <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
-                                <p className='text-center'>$26.00 </p>
+                <div className='lg:flex justify-between  py-3 '>
+                    <div className='flex'>
+                        <div className=' mx-4 bg-[#FFFFFF] py-3 px-3'>
+                            <div><img src={Trending} alt="" />
+                                <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
+                                    <p className='text-center'>$26.00 </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
+                            <div><img src={Trending1} alt="" />
+                                <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
+                                    <p className='text-center'>$26.00 </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
-                        <div><img src={Trending1} alt="" />
-                            <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
-                                <p className='text-center'>$26.00 </p>
+                    <div className='flex mt-3 lg:mt-0'>
+                        <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
+                            <div><img src={Trending2} alt="" />
+                                <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
+                                    <p className='text-center'>$26.00 </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
-                        <div><img src={Trending2} alt="" />
-                            <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
-                                <p className='text-center'>$26.00 </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
-                        <div><img src={Trending3} alt="" />
-                            <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
-                                <p className='text-center'>$26.00 </p>
+                        <div className='mx-4 bg-[#FFFFFF] py-3 px-3'>
+                            <div><img src={Trending3} alt="" />
+                                <div><h2 className='text-[#151875] font-[25px] text-center'>Cantilever chair</h2>
+                                    <p className='text-center'>$26.00 </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className='flex cursor-pointer'>
-                <div className='w-1/3 mx-3 '><img src={Trending4} alt="" /></div>
-                <div className='w-1/3 mx-3 '><img src={Trending5} alt="" /></div>
-                <div className='w-1/3 mx-3  mt-4'>
+            <div className='lg:flex cursor-pointer'>
+                <div className='lg:flex flex'>
+                <div className=' mx-3 '><img src={Trending4} alt="" /></div>
+                <div className=' mx-3 '><img src={Trending5} alt="" /></div>
+                </div>
+                <div className='lg:w-1/3 mx-3 mt-4'>
                     <div className='flex my-1'>
                         <div><img className=' bg-amber-50 mr-3' src={Trendings} alt="" /></div>
                         <div><h4 className=' text-[#151875]'>Executive Seat chair</h4>
@@ -71,7 +77,7 @@ const TrendingProducts = () => {
                     </div>
 
                 </div>
-            </div> 
+            </div>
         </Container>
     )
 }
