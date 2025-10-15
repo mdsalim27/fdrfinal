@@ -31,12 +31,12 @@ let handdelLess =() =>{
 
   return (<>
     <Container>
-      <div>
+      <div  >
         {cateFilterShow.length > 0 ?
           <div className=''>
-            <div className='flex flex-wrap'>
+            <div className='lg:flex lg:flex-wrap'>
               {cateFilterShow.map((item) => (
-                <div className=' relative w-[32%] mx-1  my-3  '>
+                <div className=' relative lg:w-[32%] w-[49%] mx-1  my-3  '>
                   <Link to={`/shop/:${item.id}`}>
 
                     <div className='shadow-2xl  '>
@@ -106,9 +106,9 @@ let handdelLess =() =>{
 
           <div className={`${listitem == "Active" ? '' : `w-full flex flex-wrap `}`} >{
             Allpage.map((item) => (
-              <div className=' relative w-[33%] my-3  '>
+              <div className=' relative lg:w-[33%] w-[49%] lg:my-3  '>
                 <Link to={`/shop/${item.id}`}>
-                  <div className='shadow-2xl mx-1 '>
+                  <div className='shadow-2xl mx-1 my-1'>
                     <div className='relative'>
                       <div className=' bg-[#F6F7FB] '>
                         {/* <img className='mx-auto  ' src={item.image_path} alt="" /> */}
@@ -130,7 +130,7 @@ let handdelLess =() =>{
                     </div>
                     {/* hovar mart /////////////////////////////////////////////////////////////////////////////// */}
                     <div className='w-[100%]  shadow-2xl absolute bottom-0 left-0 opacity-0 hover:opacity-100 '>
-                      <div className='relative mx-1'>
+                      <div className='relative mx-1 my-1'>
                         <div className=' bg-[#F7F7F7]'>
                           <img className='mx-auto  ' src={item.thumbnail} alt="" />
                           <div className='flex '>

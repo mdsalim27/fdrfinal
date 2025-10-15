@@ -98,21 +98,18 @@ const Shop = () => {
 
   return (
     <Container>
-
-
-      <div className='flex justify-between items-center py-10'>
-        <div>
+      <div className=' items-center py-5'>
+        <div className='text-center '>
           <h2 className=' text-[#151875] text-[23px] font-bold '>Ecommerce Acceories & Fashion item </h2>
           <p className='text-[#8A8FB9] font-medium text-[16px]'>About 9,620 results (0.62 seconds)</p>
         </div>
-        <div className=' col-span-2'>
-          <div className='flex items-center'>
+        <div className='lg:flex lg:justify-center lg:mt-8 col-span-2 mt-8 lg:mt-0'>
+          <div className='lg:flex items-center'>
             {/* Product Selector  */}
-            <div className=''>
+            <div className='flex'>
               <div>
-                <label className='px-2 font-bold' pr-2 htmlFor="">Per Page:</label>
-                <select onChange={handelePageChange} name=" " id="" className='py-1 px-4 border-2 border-[#262626]'>
-
+                <label className='lg:px-2 lg:font-bold' htmlFor="">Per Page:</label>
+                <select onChange={handelePageChange} name=" " id="" className='py-1 lg:px-4 border-2 border-[#262626]'>
                   <option value="9"> 9</option>
                   <option value="12"> 12</option>
                   <option value="20">20</option>
@@ -123,55 +120,58 @@ const Shop = () => {
                   <option value="100">100</option>
                 </select>
               </div>
+              {/* Category selector */}
+              <div className=''>
+                <div className='flex justify-between'>
+                  <label className='px-2 font-bold' pr-2 htmlFor="">Sort By:</label>
+                  <select onChange={handeleCatagory} name=" " id="" className='py-1  border-2 border-[#262626]'>
+                    <option onClick={handeleAllproducts}>All Produsct</option>
+                    {catagory.map((item) => (
+                      <option value={item}>{item}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
-            {/* Category selector */}
-            <div>
-              <div className='flex justify-between'>
-                <label className='px-2 font-bold' pr-2 htmlFor="">Sort By:</label>
-                <select onChange={handeleCatagory} name=" " id="" className='py-1  border-2 border-[#262626]'>
-                  <option onClick={handeleAllproducts}>All Produsct</option>
-                  {catagory.map((item) => (
-                    <option value={item}>{item}</option>
-                  ))}
+            <div className='flex mt-7 lg:mt-0'>
+              {/* list unlist */}
+              <div className=' flex items-center  '  >
+                <div className=''>  <p className='ml-5 font-bold '>View:</p></div>
+                <div onClick={handeleListitem} className={`${listitem == "Active" ? 'flex justify-end bg-amber-600 text-[25px] py-1 px-1 ml-3 w-[40px] h-[30px]' : ' flex justify-end text-[25px] py-1 px-1  ml-3 w-[40px] h-[30px]'}`}>
+                  <MdOutlinePlaylistAddCheck />
+                </div>
+                <div onClick={() => setListitem("")} className={`${listitem == "Active" ? 'flex justify-start  text-[25px] py-1 px-1   ml-3 w-[40px] h-[30px]' : 'flex justify-start bg-amber-600 text-[25px] py-1 px-1 ml-3 w-[40px] h-[30px]'}`}>
+                  <FaThList />
+                </div>
+              </div>
+              {/* Price Range */}
+              <div className="flex justify-between items-center">
+                <label className="px-2 font-bold" htmlFor="price">
+                  Price:
+                </label>
+                <select
+                  id="price"
+                  className="py-1 border-2 border-[#262626] rounded-md"
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === "0-9") handlePrice({ low: 0, high: 9 });
+                    else if (value === "10-19") handlePrice({ low: 10, high: 19 });
+                    else if (value === "20-29") handlePrice({ low: 20, high: 29 });
+                    else if (value === "30-49") handlePrice({ low: 30, high: 49 });
+                    else if (value === "50-200") handlePrice({ low: 50, high: 200 });
+                  }}
+                >
+                  <option value="">Price Range</option>[]
+                  <option value="0-9">$0 - $9</option>
+                  <option value="10-19">$10 - $19</option>
+                  <option value="20-29">$20 - $29</option>
+                  <option value="30-49">$30 - $49</option>
+                  <option value="50-200">$49 - $200</option>
                 </select>
               </div>
             </div>
-            {/* list unlist */}
-            <div className=' flex items-center  '  >
-              <div className=''>  <p className='ml-5 font-bold '>View:</p></div>
-              <div onClick={handeleListitem} className={`${listitem == "Active" ? 'flex justify-end bg-amber-600 text-[25px] py-1 px-1 ml-3 w-[40px] h-[30px]' : ' flex justify-end text-[25px] py-1 px-1  ml-3 w-[40px] h-[30px]'}`}>
-                <MdOutlinePlaylistAddCheck />
-              </div>
-              <div onClick={() => setListitem("")} className={`${listitem == "Active" ? 'flex justify-start  text-[25px] py-1 px-1   ml-3 w-[40px] h-[30px]' : 'flex justify-start bg-amber-600 text-[25px] py-1 px-1 ml-3 w-[40px] h-[30px]'}`}>
-                <FaThList />
-              </div>
-            </div>
 
-            {/* Price Range */}
-            <div className="flex justify-between items-center">
-              <label className="px-2 font-bold" htmlFor="price">
-                Price:
-              </label>
-              <select
-                id="price"
-                className="py-1 border-2 border-[#262626] rounded-md"
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "0-9") handlePrice({ low: 0, high: 9 });
-                  else if (value === "10-19") handlePrice({ low: 10, high: 19 });
-                  else if (value === "20-29") handlePrice({ low: 20, high: 29 });
-                  else if (value === "30-49") handlePrice({ low: 30, high: 49 });
-                  else if (value === "50-200") handlePrice({ low: 50, high: 200 });
-                }}
-              >
-                <option value="">Price Range</option>[]
-                <option value="0-9">$0 - $9</option>
-                <option value="10-19">$10 - $19</option>
-                <option value="20-29">$20 - $29</option>
-                <option value="30-49">$30 - $49</option>
-                <option value="50-200">$49 - $200</option>
-              </select>
-            </div>
+
           </div>
         </div>
       </div>
