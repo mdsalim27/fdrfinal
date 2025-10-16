@@ -8,8 +8,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 function SampleNextArrow(props) {
   const { style, onClick } = props;
   return (
-    <div className='lg:w-[50px] w-[30px] lg:h-[50px] h-[30px] border-none rounded-full flex justify-center 
-        items-center bg-[#84d765] absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
+    <div className=' absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
     >
       <FaArrowAltCircleRight className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer' />
     </div>
@@ -18,8 +17,7 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { style, onClick } = props;
   return (
-    <div className='lg:w-[50px] w-[50px] lg:h-[50px] h-[50px]  border-none rounded-full flex  justify-center
-         items-center bg-[#84d765] absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
+    <div className=' absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
       <FaArrowAltCircleLeft className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer ' />
     </div>
   );
@@ -40,6 +38,32 @@ const TopCategories = () => {
     slidesToScroll: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1024, // lg (≤1024px)
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // md (≤768px)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false, // optional: hide arrows on smaller screens
+        },
+      },
+      {
+        breakpoint: 480, // sm (≤480px)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false, // optional
+        },
+      },
+    ],
   }
 
   return (

@@ -103,7 +103,7 @@ const Shop = () => {
           <h2 className=' text-[#151875] text-[23px] font-bold '>Ecommerce Acceories & Fashion item </h2>
           <p className='text-[#8A8FB9] font-medium text-[16px]'>About 9,620 results (0.62 seconds)</p>
         </div>
-        <div className='lg:flex lg:justify-center lg:mt-8 col-span-2 mt-8 lg:mt-0'>
+        <div className='lg:flex lg:justify-center mt-8 col-span-2 lg:mt-0'>
           <div className='lg:flex items-center'>
             {/* Product Selector  */}
             <div className='flex'>

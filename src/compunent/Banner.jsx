@@ -55,10 +55,10 @@ function SampleNextArrow(props) {
     const { onClick } = props;
     return (
         <div
-            className='absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 lg:right-6 z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-blue-600 rounded-full flex justify-center items-center cursor-pointer'
+            className='absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 lg:right-6 z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 hidden lg:block justify-center items-center cursor-pointer'
             onClick={onClick}
         >
-            <FaArrowAltCircleRight className='w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white' />
+            <FaArrowAltCircleRight className='w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-[blue]' />
         </div>
     );
 }
@@ -67,10 +67,10 @@ function SamplePrevArrow(props) {
     const { onClick } = props;
     return (
         <div
-            className='absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 lg:left-6 z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-blue-600 rounded-full flex justify-center items-center cursor-pointer'
+            className=' absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 lg:left-6 z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12  hidden lg:block justify-center items-center cursor-pointer ' 
             onClick={onClick}
         >
-            <FaArrowAltCircleLeft className='w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white' />
+            <FaArrowAltCircleLeft className='w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-[blue]' />
         </div>
     );
 }

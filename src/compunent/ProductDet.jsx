@@ -36,8 +36,7 @@ import { addToCart } from './Slice/ProductSlice'
 function SampleNextArrow(props) {
   const { style, onClick } = props;
   return (
-    <div className='lg:w-[50px] w-[30px] lg:h-[50px] h-[30px] border-none rounded-full flex justify-center 
-        items-center bg-[#a3d455] absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
+    <div className=' absolute top-[50%] translate-y-[-50%] right-0 z-[1]' onClick={onClick}
     >
       <FaArrowAltCircleRight className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer' />
     </div>
@@ -46,8 +45,7 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { style, onClick } = props;
   return (
-    <div className='lg:w-[50px] w-[50px] lg:h-[50px] h-[50px]  border-none rounded-full flex  justify-center
-         items-center bg-[#a3d455] absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
+    <div className=' absolute top-[50%] translate-y-[-50%] left-0 z-[1]' onClick={onClick}>
       <FaArrowAltCircleLeft className='lg:w-[30px] w-[20px] lg:h-[30px] h-[20px] cursor-pointer ' />
     </div>
   );
@@ -63,6 +61,32 @@ const ProductDet = () => {
     slidesToScroll: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+
+     responsive: [
+            {
+                breakpoint: 1024, // lg (≤1024px)
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768, // md (≤768px)
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false, // optional: hide arrows on smaller screens
+                },
+            },
+            {
+                breakpoint: 480, // sm (≤480px)
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false, // optional
+                },
+            },
+        ],
   }
 
   // singalepage singaleproduct show
@@ -92,11 +116,11 @@ const ProductDet = () => {
   let dispach = useDispatch()
   let navigate = useNavigate()
   let handleCart = (item) => {
-    dispach(addToCart({...item, qun: 1}))
+    dispach(addToCart({ ...item, qun: 1 }))
     toast("successfully added to cart");
     setTimeout(() => {
       navigate("/cart")
-    }, 2000) 
+    }, 2000)
   }
 
   // discounte
@@ -107,39 +131,44 @@ const ProductDet = () => {
     <section className='bg-[#F9F8FE] py-20'>
       <Container>
         <section>
-          <div className=' grid grid-cols-2 py-5 px-30 my-20 shadow-2xl'>
-            <div className=' relative'>
-              <div><img src={singleProduct.thumbnail} alt="" /></div>
-              {/* <Link to={"/cart"}> */}
-              <div className=' absolute left-0 bottom-0 '>
-                <button className='bg-green-200 text-[blue] px-8 mx-1 py-3 border-2 border-green-900 
+          <div className=' grid lg:grid-cols-2 lg:py-5 lg:px-30 lg:my-20 shadow-2xl'>
+            <div className=' relative '>
+              <div>
+                <img src={singleProduct.thumbnail} alt="" />
+              </div>
+              <div className=' absolute lg:left-0 left-[50%] translate-x-[-50%] lg:bottom-0 flex bottom-[-25px]'>
+                <button className=' hidden lg:block bg-green-200 text-[blue] lg:pl-7 px-3 mx-1 py-3 border-2 border-green-900 
                 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
-                <button onClick={()=>handleCart(singleProduct)} className='bg-green-200 text-[blue]
-                 px-8 mx-1 py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black 
+                <button onClick={() => handleCart(singleProduct)} className='bg-green-200 text-[blue]
+                 lg:px-8 px-8 mx-1 py-3 lg:py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black 
                  hover:text-[#FFFF] rounded-2xl'>Add To Cart</button>
                 <ToastContainer />
               </div>
-              {/* </Link> */}
             </div>
+
             <div>
-              <div className=''>
-                <h2 className='py-5 font-bold text-[30px]'>Playwood arm chair</h2>
-                <div className='flex py-5 text-[35px] '>
-                  {
-                    clientRating
-                  }
-                </div>
-                <div className='flex gap-10 py-2 text-[#151875] font-medium text-[20px]'>
-                  <p>{"$" + mainPrice.toFixed(2)}</p>
-                  <p className='line-through'>{"$" + singleProduct.price}</p>
+              <div className='text-center lg:text-start'>
+                <h2 className='lg:py-5 pt-5 lg:pt-0 font-bold text-[30px]'>Playwood arm chair</h2>
+
+                <div className='flex items-center justify-center lg:justify-start lg:gap-2 gap-2'>
+                  <div className='flex py-5 text-[35px] '>
+                    {
+                      clientRating
+                    }
+                  </div>
+                  <div className='flex lg:gap-10  py-2 text-[#151875] font-medium text-[20px] '>
+                    <p>{"$" + mainPrice.toFixed(2)}</p>
+                    <p className='line-through'>{"$" + singleProduct.price}</p>
+                  </div>
+
                 </div>
                 <div><h2 className='py-2 text-[#151875] font-medium text-[20px]'>Color</h2></div>
                 <div><p className='py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.</p></div>
                 <div className='flex items-center justify-center gap-16 py-2 text-[#151875] font-medium text-[20px]'><h3 className='py-2'>Add To cart</h3><CiHeart /></div>
                 <div><h2 className='py-2 text-[#151875] font-medium text-[20px]'>Categories:</h2></div>
                 <div><h2 className='py-2 text-[#151875] font-medium text-[20px]'>Tags</h2></div>
-                <div className='flex gap-20 items-center py-2 text-[#151875] font-medium text-[20px]'><h2>Share</h2>
-                  <div className='flex gap-8'> <a target='_blank' href="https://www.facebook.com/"><FaFacebook /></a>
+                <div className='flex lg:gap-20 gap-5 pl-5 lg:line-clamp-1 items-center py-2 text-[#151875] font-medium text-[20px]'><h2>Share</h2>
+                  <div className='flex lg:gap-8 gap-4'> <a target='_blank' href="https://www.facebook.com/"><FaFacebook /></a>
                     <a target='_blank' href="https://github.com/mdsalim27"><FaGithub /></a>
                     <a target='_blank' href="https://x.com/"><FaTwitter /></a>
                   </div></div>
@@ -149,11 +178,15 @@ const ProductDet = () => {
         </section>
         <section className='bg-[#F9F8FE] py-20'>
           <div>
-            <ul className='flex gap-4 items-center'>
-              <li className=' pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Description</a></li>
-              <li className=' pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Additional Info</a></li>
-              <li className=' pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Reviews</a></li>
-              <li className=' pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Video</a></li>
+            <ul className='lg:flex gap-4 items-center'>
+              <div className='flex text-start'>
+                <li className=' lg:pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Description</a></li>
+                <li className=' pl-5 lg:pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Additional Info</a></li>
+              </div>
+              <div className='flex text-end'>
+                <li className='lg:pr-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Reviews</a></li>
+                <li className='pl-13 lg:pl-7 hover:underline hover:text-[blue] '><a href="#" className='text-[25px] font-bold'>Video</a></li>
+              </div>
             </ul>
           </div>
           <div>
