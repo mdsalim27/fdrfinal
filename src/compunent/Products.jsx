@@ -18,15 +18,15 @@ const Products = ({ Allpage, filtershow, listitem }) => {
   }, [filtershow])
 
 
-  let handelShow =()=>{
+  let handelShow = () => {
     setCateFilterShow(filtershow)
     setShow(false)
   }
-let handdelLess =() =>{
-   let cateall = filtershow.slice(0, 3)
+  let handdelLess = () => {
+    let cateall = filtershow.slice(0, 3)
     setCateFilterShow(cateall)
-     setShow(true)
-}
+    setShow(true)
+  }
 
 
   return (<>
@@ -90,16 +90,16 @@ let handdelLess =() =>{
                 </div>
               ))}
             </div>
- 
-             {filtershow.length > 3 &&
-                show  ?
-                <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handelShow}>Show All</button>
-                // <h2 className=' cursor-pointer bg-[green] border border-[blue]' onClick={handelShow}>Show All</h2>
-               : filtershow.length > 3 &&
-              //  <h2 className=' cursor-pointer' onClick={handdelLess}>Less</h2>
-               <button  className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handdelLess}>Less</button>
 
-              } 
+            {filtershow.length > 3 &&
+              show ?
+              <button className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handelShow}>Show All</button>
+              // <h2 className=' cursor-pointer bg-[green] border border-[blue]' onClick={handelShow}>Show All</h2>
+              : filtershow.length > 3 &&
+              //  <h2 className=' cursor-pointer' onClick={handdelLess}>Less</h2>
+              <button className=' cursor-pointer bg-[green] border border-[blue] px-4 py-2 text-[#FFFF] hover:font-bold ' onClick={handdelLess}>Less</button>
+
+            }
           </div>
 
           :

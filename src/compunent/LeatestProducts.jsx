@@ -28,8 +28,8 @@ const LeatestProducts = () => {
                 </div>
 
                 <div className=''>
-                    <div className='gap-8 mt-2 lg:gap-8 lg:flex grid grid-cols-2'>
-                        <div className='lg:flex mt-2 lg:w-[24%] w-[100%] relative '>
+                    <div className='gap-2 mt-2 lg:gap-8 lg:flex grid grid-cols-2'>
+                        <div className='lg:flex  lg:w-[24%] w-[100%] relative '>
                             <div className='lg:mt-7 w-[100%] shadow-2xl '>
                                 <div className='relative'>
                                     <div className=' bg-[#F7F7F7]'>
@@ -98,7 +98,7 @@ const LeatestProducts = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='lg:flex mt-2 lg:w-[24%] w-[100%] relative '>
+                        <div className='lg:flex lg:w-[24%] w-[100%] relative '>
                             <div className='lg:mt-7 w-[100%] shadow-2xl '>
                                 <div className='relative'>
                                     <div className=' bg-[#F7F7F7]'>
@@ -168,8 +168,8 @@ const LeatestProducts = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='gap-8 lg:gap-8 lg:flex grid grid-cols-2'>
-                        <div className='lg:flex lg:w-[24%] w-[100%] relative mt-2'>
+                    <div className='gap-2 mt-2 lg:gap-8 lg:flex grid grid-cols-2'>
+                        <div className='lg:flex lg:w-[24%] w-[100%] relative '>
                             <div className='lg:mt-7 w-[100%] shadow-2xl '>
                                 <div className='relative'>
                                     <div className=' bg-[#F7F7F7]'>
@@ -238,7 +238,7 @@ const LeatestProducts = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='lg:flex lg:w-[24%] w-[100%] relative mt-2'>
+                        <div className='lg:flex lg:w-[24%] w-[100%] relative '>
                             <div className='lg:mt-7 w-[100%] shadow-2xl '>
                                 <div className='relative'>
                                     <div className=' bg-[#F7F7F7]'>
@@ -273,7 +273,7 @@ const LeatestProducts = () => {
                             </div>
                         </div>
 
-                        <div className='lg:flex lg:w-[24%] w-[100%] relative '>
+                        <div className='lg:flex lg:w-[24%] w-[100%] relative  '>
                             <div className='lg:mt-7 w-[100%] shadow-2xl '>
                                 <div className='relative'>
                                     <div className=' bg-[#F7F7F7]'>

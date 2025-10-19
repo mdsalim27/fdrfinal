@@ -123,7 +123,7 @@ const Shop = () => {
               {/* Category selector */}
               <div className=''>
                 <div className='flex justify-between'>
-                  <label className='px-2 font-bold' pr-2 htmlFor="">Sort By:</label>
+                  <label className='px-1 font-bold' pr-2 htmlFor="">Sort By:</label>
                   <select onChange={handeleCatagory} name=" " id="" className='py-1  border-2 border-[#262626]'>
                     <option onClick={handeleAllproducts}>All Produsct</option>
                     {catagory.map((item) => (
