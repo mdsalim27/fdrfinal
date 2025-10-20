@@ -241,8 +241,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="shadow-md relative z-50 bg-white">
-      <section className="py-3 md:py-4">
+    <nav className="shadow-md relative bg-white lg:pt-15 pt-40">
+      <section className="py-3 md:py-4  ">
         <Container>
           <div className="flex items-center justify-between gap-3">
             {/* Logo */}
@@ -305,7 +305,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Icon */}
             <div
-              className="lg:hidden text-2xl cursor-pointer p-2 rounded-md hover:bg-gray-100 transition"
+              className="lg:hidden text-2xl cursor-pointer p-2 rounded-md hover:bg-gray-100 transition z[101]"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
@@ -316,15 +316,15 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-[50%] sm:w-[50%] md:w-[50%] bg-white shadow-lg transform transition-transform duration-500 ease-in-out z-50
+        className={`fixed top-0 left-0 h-full w-[50%] sm:w-[50%] md:w-[50%] bg-white shadow-lg transform transition-transform duration-500 ease-in-out z-[200]
         ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        <div className="p-4 flex justify-between items-center border-b">
+        <div className="p-4 flex justify-between items-center border-b ]">
           <img src={Logo} alt="Logo" className="w-20 sm:w-24" />
           <FaTimes className="text-xl cursor-pointer" onClick={() => setMenuOpen(false)} />
         </div>
 
-        <ul className="flex flex-col gap-4 p-5 font-medium text-gray-700 text-sm sm:text-base">
+        <ul className="flex flex-col gap-4 p-5 font-medium text-gray-700 text-sm sm:text-base ">
           <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
           <li><a href="/pages" onClick={() => setMenuOpen(false)}>Pages</a></li>
           <li><a href="/products" onClick={() => setMenuOpen(false)}>Products</a></li>

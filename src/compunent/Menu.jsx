@@ -95,7 +95,7 @@ const Menu = () => {
     let data = useSelector((item) => item.Product.cartItem)
 
     return (
-        <section className='bg-[#7E33E0] py-3 text-sm md:text-base'>
+        <section className='bg-[#7E33E0] py-3 text-sm md:text-base fixed z-[100] w-full'>
             <Container>
                 <div className='flex flex-col md:flex-row md:justify-between md:items-center gap-3'>
 
