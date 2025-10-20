@@ -94,7 +94,6 @@ const ProductDet = () => {
   let info = useContext(ApiData)
   let [singleProduct, setSingleProduct] = useState([])
   let productId = useParams()
-
   let getproductId = () => {
     axios.get(`https://dummyjson.com/products/${productId.id}`).then((response) => {
       setSingleProduct(response.data)
@@ -137,7 +136,7 @@ const ProductDet = () => {
                 <img src={singleProduct.thumbnail} alt="" />
               </div>
               <div className=' absolute lg:left-0 left-[50%] translate-x-[-50%] lg:bottom-0 flex bottom-[-25px]'>
-                <button className=' hidden lg:block bg-green-200 text-[blue] lg:pl-7 px-3 mx-1 py-3 border-2 border-green-900 
+                <button onClick={() => handleCart(singleProduct)} className=' hidden lg:block bg-green-200 text-[blue] lg:pl-7 px-3 mx-1 py-3 border-2 border-green-900 
                 hover:font-extrabold hover:bg-black hover:text-[#FFFF] rounded-2xl'>Buy</button>
                 <button onClick={() => handleCart(singleProduct)} className='bg-green-200 text-[blue]
                  lg:px-8 px-8 mx-1 py-3 lg:py-3 border-2 border-green-900 hover:font-extrabold hover:bg-black 

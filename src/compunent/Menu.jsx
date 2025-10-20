@@ -132,7 +132,7 @@ const Menu = () => {
 
                         {/* Login */}
                         <Link to={"/loginpage"}>
-                            <div className='flex items-center gap-1 hover:font-bold hover:text-[18px] transition-all'>
+                            <div className='flex items-center gap-1 hover:font-bold hover:text-[18px] transition-all border-2 border-amber-200'>
                                 <h2>Login</h2>
                                 <GiHumanTarget />
                             </div>

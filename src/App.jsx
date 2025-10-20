@@ -8,7 +8,6 @@ import { createBrowserRouter, createRoutesFromElements, Outlet, Route, Router, R
 import Shop from './compunent/Shop'
 import Home from './page/Home'
 import Contact from './compunent/Contact'
-import Products from './compunent/Products'
 import Blog from './compunent/Blog'
 import Page from './compunent/Page'
 import ProductDet from './compunent/ProductDet'

@@ -170,8 +170,6 @@ const Shop = () => {
                 </select>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
